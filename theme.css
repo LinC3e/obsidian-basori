@@ -1,61 +1,120 @@
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
-	--font-text-theme: inter, serif;
-  
+  --radius-s: 0px;
+  --radius-m: 0px;
+  --radius-l: 0px;
+  --input-radius: 0px;
+  --tab-radius-active: 0px;
+  --checkbox-radius: 0px;
+  --toggle-radius: 0px;
+  --toggle-thumb-radius: 0px;
+  --slider-thumb-radius: 0px;
+  --font-text-theme: inter, serif;
+  --header-height: 40px;
 }
 
 .workspace-tab-header.is-active::before,
 .workspace-tab-header.is-active::after {
-	display: none;
+  display: none;
 }
 
 svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  rx: 0;
+  ry: 0;
 }
 
 .theme-dark {
-    /* Fondos */
-    --background-primary: #0F172A;
-    --background-secondary: #10203b;
-		--ribbon-background: #0b2a559f;
-		--titlebar-background: #0F172A;
-    --titlebar-background-focused: #10203b;
-    --titlebar-border-color: #334155;
-    --titlebar-text-color: #94A3B8;
-    --titlebar-text-color-focused: #F1F5F9;
-    --header-height: 40px;
+  /* Backgrounds */
+  --background-primary: #0F172A;
+  --background-secondary: #10203b;
+  --ribbon-background: #0b2a559f;
+  /* Titlebar */
+  --titlebar-background: #0F172A;
+  --titlebar-background-focused: #10203b;
+  --titlebar-border-color: #334155;
+  --titlebar-text-color: #94A3B8;
+  --titlebar-text-color-focused: #F1F5F9;
+  /* Scrollbar */
+  --scrollbar-thumb-bg: #293f73;
+  --scrollbar-active-thumb-bg: #133c93;
+  /* BUTTONS */
+  --button-radius: 7px;
+  --interactive-normal: #10203b;
+  --interactive-hover: #0b3582;
+  --text-on-accent: #ffffff;
+  /*  CHECKBOX */
+  --checkbox-radius: 6px;
+  --checkbox-size: 16px;
+  --checkbox-color: #3b82f6;
+  --checkbox-color-hover: #60a5fa;
+  --checkbox-marker-color: #ffffff;
+  --checkbox-border-color: #475569;
+  --checkbox-border-color-hover: #64748b;
+  --checklist-done-color: #94a3b8;
+  --checklist-done-decoration: line-through;
 }
 
 .theme-light {
-	--background-primary: #F0F9FF;
+  --background-primary: #F0F9FF;
   --background-secondary: #E0F2FE;
-	--ribbon-background: #a1d4f6;
+  --ribbon-background: #a1d4f6;
   --titlebar-background-focused: #E0F2FE;
-    --titlebar-border-color: #BAE6FD;
-    --titlebar-text-color: #3971c0;
-    --titlebar-text-color-focused: #183475; /* Btns wind */
-    --header-height: 40px;
+  --titlebar-border-color: #BAE6FD;
+  --titlebar-text-color: #3971c0;
+  --titlebar-text-color-focused: #183475;
+  --scrollbar-thumb-bg: #a1d4f6;
+  --scrollbar-active-thumb-bg: #4cb3f8;
+  --button-radius: 7px;
+  --interactive-normal: #E0F2FE;
+  --interactive-hover: #7dd3fc;
+  --text-on-accent: #ffffff;
+  --checkbox-radius: 6px;
+  --checkbox-size: 17px;
+  --checkbox-color: #0284c7; /*  CTA light */
+  --checkbox-color-hover: #0369a1;
+  --checkbox-marker-color: #ffffff;
+  --checkbox-border-color: #6bb7da;
+  --checkbox-border-color-hover: #38bdf8;
+  --checklist-done-color: #3573ca;
+  --checklist-done-decoration: line-through;
+}
+
+.theme-light ::selection {
+  background: rgba(74, 111, 165, 0.2);
+  color: var(--text-normal);
 }
 
 .menu {
-	padding: var(--size-2-1);
+  padding: var(--size-2-1);
 }
 
 .menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+  padding: var(--size-4-1) var(--size-4-2);
 }
 
 .menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+  margin: var(--size-2-1) calc(var(--size-2-1) * -1);
 }
+
+/* normal btns */
+button,
+.mod-cta,
+.clickable-icon {
+  border-radius: var(--button-radius);
+}
+
+/* contrast & states */
+button:not(.mod-cta):not(.mod-warning):not(.mod-destructive) {
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--background-modifier-border);
+}
+
+/*# sourceMappingURL=theme.css.map */

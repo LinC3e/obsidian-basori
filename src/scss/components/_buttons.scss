@@ -1,0 +1,19 @@
+/* normal btns */
+button,
+.mod-cta,
+.clickable-icon {
+	border-radius: var(--button-radius);
+}
+
+/* contrast & states */
+button:not(.mod-cta):not(.mod-warning):not(.mod-destructive) {
+	background-color: var(--interactive-normal);
+	color: var(--text-normal);
+	border: 1px solid transparent;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
+	background-color: var(--interactive-hover);
+	border-color: var(--background-modifier-border);
+}

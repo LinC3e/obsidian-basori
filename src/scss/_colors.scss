@@ -1,0 +1,79 @@
+.theme-dark {
+	/* Backgrounds */
+
+	--background-primary: #0F172A;
+	--background-secondary: #10203b;
+	--ribbon-background: #0b2a559f;
+	/* Titlebar */
+
+	--titlebar-background: #0F172A;
+	--titlebar-background-focused: #10203b;
+	--titlebar-border-color: #334155;
+	--titlebar-text-color: #94A3B8;
+	--titlebar-text-color-focused: #F1F5F9;
+
+	/* Scrollbar */
+
+	--scrollbar-thumb-bg: #293f73;
+	--scrollbar-active-thumb-bg: #133c93;
+
+	/* BUTTONS */
+
+	--button-radius: 7px;
+	--interactive-normal: #10203b;
+	--interactive-hover: #0b3582;
+	--text-on-accent: #ffffff;
+
+	/*  CHECKBOX */
+	--checkbox-radius: 6px;
+	--checkbox-size: 16px;
+
+	--checkbox-color: #3b82f6;
+	--checkbox-color-hover: #60a5fa;
+	--checkbox-marker-color: #ffffff;
+
+	--checkbox-border-color: #475569;
+	--checkbox-border-color-hover: #64748b;
+
+	--checklist-done-color: #94a3b8;
+	--checklist-done-decoration: line-through;
+}
+
+.theme-light {
+	--background-primary: #F0F9FF;
+	--background-secondary: #E0F2FE;
+	--ribbon-background: #a1d4f6;
+
+	--titlebar-background-focused: #E0F2FE;
+	--titlebar-border-color: #BAE6FD;
+	--titlebar-text-color: #3971c0;
+	--titlebar-text-color-focused: #183475;
+
+	--scrollbar-thumb-bg: #a1d4f6;
+	--scrollbar-active-thumb-bg: #4cb3f8;
+
+	--button-radius: 7px;
+	--interactive-normal: #E0F2FE;
+	--interactive-hover: #7dd3fc;
+	--text-on-accent: #ffffff;
+
+	--checkbox-radius: 6px;
+	--checkbox-size: 17px;
+
+	--checkbox-color: #0284c7;                     /*  CTA light */
+	--checkbox-color-hover: #0369a1;
+	--checkbox-marker-color: #ffffff;
+
+	--checkbox-border-color: #6bb7da;
+	--checkbox-border-color-hover: #38bdf8;
+
+	--checklist-done-color: #3573ca;
+	--checklist-done-decoration: line-through;
+}
+
+// Selection
+
+.theme-light ::selection {
+	background: rgb(74, 111, 165, 0.2);
+	color: var(--text-normal);
+}
