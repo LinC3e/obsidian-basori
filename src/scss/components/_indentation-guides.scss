@@ -1,0 +1,14 @@
+/* Indentation Guides */
+.markdown-source-view .cm-indent::before,
+.markdown-preview-view .list-bullet::before,
+.HyperMD-list-line .cm-indent::before {
+	border-width: var(--indentation-guide-width);
+	border-color: var(--indentation-guide-color);
+}
+
+/* active guides */
+.cm-active .cm-indent::before,
+.HyperMD-list-line.cm-active .cm-indent::before {
+	border-width: var(--indentation-guide-width-active);
+	border-color: var(--indentation-guide-color-active);
+}

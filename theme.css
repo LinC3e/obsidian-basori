@@ -1,38 +1,4 @@
-body {
-  --radius-s: 0px;
-  --radius-m: 0px;
-  --radius-l: 0px;
-  --input-radius: 0px;
-  --tab-radius-active: 0px;
-  --checkbox-radius: 0px;
-  --toggle-radius: 0px;
-  --toggle-thumb-radius: 0px;
-  --slider-thumb-radius: 0px;
-  --font-text-theme: inter, serif;
-  --header-height: 40px;
-  /* swatch */
-  --swatch-radius: 10px; /* coherente con el resto del tema */
-  --swatch-height: 22px;
-  --swatch-width: 50px;
-  --swatch-shadow: none;
-  /* dialog */
-  --dialog-width: 470px;
-  --dialog-max-width: 90vw;
-  --dialog-max-height: 85vh;
-}
-
-.workspace-tab-header.is-active::before,
-.workspace-tab-header.is-active::after {
-  display: none;
-}
-
-svg * {
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-  rx: 0;
-  ry: 0;
-}
-
+@charset "UTF-8";
 .theme-dark {
   /* Backgrounds */
   --background-primary: #0F172A;
@@ -62,6 +28,17 @@ svg * {
   --checkbox-border-color-hover: #64748b;
   --checklist-done-color: #94a3b8;
   --checklist-done-decoration: line-through;
+  --drag-ghost-background: #1e3a5f;
+  --drag-ghost-text-color: #e2e8f0;
+  --dropdown-background-hover: #0b3582;
+  --dropdown-background-blend-mode: normal;
+  --dropdown-background-position: right 8px center;
+  --dropdown-background-size: 12px;
+  --dropdown-padding: 4px 28px 4px 10px;
+  --indentation-guide-width: 1px;
+  --indentation-guide-width-active: 2px;
+  --indentation-guide-color: #334155;
+  --indentation-guide-color-active: #3b82f6;
 }
 
 .theme-light {
@@ -87,6 +64,17 @@ svg * {
   --checkbox-border-color-hover: #38bdf8;
   --checklist-done-color: #3573ca;
   --checklist-done-decoration: line-through;
+  --drag-ghost-background: #bae6fd;
+  --drag-ghost-text-color: #0f172a;
+  --dropdown-background-hover: #7dd3fc;
+  --dropdown-background-blend-mode: normal;
+  --dropdown-background-position: right 8px center;
+  --dropdown-background-size: 12px;
+  --dropdown-padding: 4px 28px 4px 10px;
+  --indentation-guide-width: 1px;
+  --indentation-guide-width-active: 2px;
+  --indentation-guide-color: #6bb7da;
+  --indentation-guide-color-active: #0284c7;
 }
 
 .theme-light ::selection {
@@ -94,17 +82,62 @@ svg * {
   color: var(--text-normal);
 }
 
+body {
+  --radius-s: 0px;
+  --radius-m: 0px;
+  --radius-l: 0px;
+  --input-radius: 0px;
+  --tab-radius-active: 0px;
+  --checkbox-radius: 0px;
+  --toggle-radius: 0px;
+  --toggle-thumb-radius: 0px;
+  --slider-thumb-radius: 0px;
+  --font-text-theme: inter, serif;
+  --header-height: 40px;
+  /* swatch */
+  --swatch-radius: 10px; /* coherente con el resto del tema */
+  --swatch-height: 22px;
+  --swatch-width: 50px;
+  --swatch-shadow: none;
+  /* dialog */
+  --dialog-width: 470px;
+  --dialog-max-width: 90vw;
+  --dialog-max-height: 85vh;
+  /* Indentation  */
+  --indentation-guide-editing-indent: 1.2em;
+  --indentation-guide-reading-indent: 1.2em;
+  --indentation-guide-source-indent: 1.2em;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+  display: none;
+}
+
+svg * {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  rx: 0;
+  ry: 0;
+}
+
 /* Components */
-.menu {
-  padding: var(--size-2-1);
+/* Dropdown */
+select,
+.dropdown {
+  background-color: var(--interactive-normal);
+  background-blend-mode: var(--dropdown-background-blend-mode);
+  background-position: var(--dropdown-background-position);
+  background-size: var(--dropdown-background-size);
+  padding: var(--dropdown-padding);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.menu-item {
-  padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-  margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+select:hover,
+.dropdown:hover {
+  background-color: var(--dropdown-background-hover);
 }
 
 /* normal btns */
@@ -125,24 +158,6 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive) {
 button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   background-color: var(--interactive-hover);
   border-color: var(--background-modifier-border);
-}
-
-/* Color Swatch */
-.color-swatch,
-.theme-color-swatch,
-.setting-item-control .color-swatch {
-  border-radius: var(--swatch-radius);
-  height: var(--swatch-height);
-  width: var(--swatch-width);
-  box-shadow: var(--swatch-shadow);
-  border: 1px solid var(--background-modifier-border);
-  transition: border-color 0.15s ease, transform 0.1s ease;
-}
-
-.color-swatch:hover,
-.theme-color-swatch:hover {
-  border-color: var(--interactive-accent);
-  transform: scale(1.05);
 }
 
 /* Dialog / Modal */
@@ -176,6 +191,61 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   padding: 5px 12px;
   border-top: 1px solid var(--background-modifier-border);
   gap: 5px;
+}
+
+.drag-ghost {
+  background-color: var(--drag-ghost-background);
+  color: var(--drag-ghost-text-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 6px 12px;
+  font-size: var(--font-ui-small);
+  opacity: 0.95;
+}
+
+/* Indentation Guides */
+.markdown-source-view .cm-indent::before,
+.markdown-preview-view .list-bullet::before,
+.HyperMD-list-line .cm-indent::before {
+  border-width: var(--indentation-guide-width);
+  border-color: var(--indentation-guide-color);
+}
+
+/* Guía activa (cuando estás en esa línea) */
+.cm-active .cm-indent::before,
+.HyperMD-list-line.cm-active .cm-indent::before {
+  border-width: var(--indentation-guide-width-active);
+  border-color: var(--indentation-guide-color-active);
+}
+
+.menu {
+  padding: var(--size-2-1);
+}
+
+.menu-item {
+  padding: var(--size-4-1) var(--size-4-2);
+}
+
+.menu-separator {
+  margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+/* Color Swatch */
+.color-swatch,
+.theme-color-swatch,
+.setting-item-control .color-swatch {
+  border-radius: var(--swatch-radius);
+  height: var(--swatch-height);
+  width: var(--swatch-width);
+  box-shadow: var(--swatch-shadow);
+  border: 1px solid var(--background-modifier-border);
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.color-swatch:hover,
+.theme-color-swatch:hover {
+  border-color: var(--interactive-accent);
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=theme.css.map */

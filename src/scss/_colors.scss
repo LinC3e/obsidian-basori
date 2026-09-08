@@ -37,6 +37,20 @@
 
 	--checklist-done-color: #94a3b8;
 	--checklist-done-decoration: line-through;
+
+	--drag-ghost-background: #1e3a5f;
+	--drag-ghost-text-color: #e2e8f0;
+
+	--dropdown-background-hover: #0b3582;
+	--dropdown-background-blend-mode: normal;
+	--dropdown-background-position: right 8px center;
+	--dropdown-background-size: 12px;
+	--dropdown-padding: 4px 28px 4px 10px;
+
+	--indentation-guide-width: 1px;
+	--indentation-guide-width-active: 2px;
+	--indentation-guide-color: #334155;
+	--indentation-guide-color-active: #3b82f6;
 }
 
 .theme-light {
@@ -69,6 +83,20 @@
 
 	--checklist-done-color: #3573ca;
 	--checklist-done-decoration: line-through;
+
+	--drag-ghost-background: #bae6fd;
+	--drag-ghost-text-color: #0f172a;
+
+	--dropdown-background-hover: #7dd3fc;
+	--dropdown-background-blend-mode: normal;
+	--dropdown-background-position: right 8px center;
+	--dropdown-background-size: 12px;
+	--dropdown-padding: 4px 28px 4px 10px;
+
+	--indentation-guide-width: 1px;
+	--indentation-guide-width-active: 2px;
+	--indentation-guide-color: #6bb7da;
+	--indentation-guide-color-active: #0284c7;
 }
 
 // Selection

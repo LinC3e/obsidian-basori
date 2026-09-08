@@ -1,0 +1,10 @@
+// Dragging component
+.drag-ghost {
+	background-color: var(--drag-ghost-background);
+	color: var(--drag-ghost-text-color);
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	padding: 6px 12px;
+	font-size: var(--font-ui-small);
+	opacity: 0.95;
+}

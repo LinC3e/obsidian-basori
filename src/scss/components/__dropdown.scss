@@ -1,0 +1,17 @@
+/* Dropdown */
+select,
+.dropdown {
+	background-color: var(--interactive-normal);
+	background-blend-mode: var(--dropdown-background-blend-mode);
+	background-position: var(--dropdown-background-position);
+	background-size: var(--dropdown-background-size);
+	padding: var(--dropdown-padding);
+	border-radius: 5px;
+	border: 1px solid transparent;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+select:hover,
+.dropdown:hover {
+	background-color: var(--dropdown-background-hover);
+}
