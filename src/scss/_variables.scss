@@ -11,4 +11,15 @@ body {
 
 	--font-text-theme: inter, serif;
 	--header-height: 40px;
+
+	/* swatch */
+	--swatch-radius: 10px;           /* coherente con el resto del tema */
+	--swatch-height: 22px;
+	--swatch-width: 50px;
+	--swatch-shadow: none;
+
+	/* dialog */
+	--dialog-width: 470px;
+	--dialog-max-width: 90vw;
+	--dialog-max-height: 85vh;
 }

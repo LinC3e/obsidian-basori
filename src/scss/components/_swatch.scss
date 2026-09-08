@@ -1,0 +1,17 @@
+/* Color Swatch */
+.color-swatch,
+.theme-color-swatch,
+.setting-item-control .color-swatch {
+	border-radius: var(--swatch-radius);
+	height: var(--swatch-height);
+	width: var(--swatch-width);
+	box-shadow: var(--swatch-shadow);
+	border: 1px solid var(--background-modifier-border);
+	transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.color-swatch:hover,
+.theme-color-swatch:hover {
+	border-color: var(--interactive-accent);
+	transform: scale(1.05);
+}

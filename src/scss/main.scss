@@ -1,5 +1,9 @@
 @use 'variables';
 @use 'base';
 @use 'colors';
+
+/* Components */
 @use 'components/menu';
 @use 'components/buttons';
+@use 'components/swatch';
+@use 'components/dialog';

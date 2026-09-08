@@ -1,0 +1,32 @@
+/* Dialog / Modal */
+.modal,
+.modal-container .modal {
+	width: var(--dialog-width);
+	max-width: var(--dialog-max-width);
+	max-height: var(--dialog-max-height);
+	border-radius: 0px;                          /* square */
+	border: 1px solid var(--background-modifier-border);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-text-theme);
+}
+
+/* Header */
+.modal-header {
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 16px 20px;
+}
+
+.modal-title {
+	font-weight: 600;
+}
+
+.modal-content {
+	padding: 3px 20px;
+}
+
+/* Btn (footer) */
+.modal-button-container {
+	padding: 5px 12px;
+	border-top: 1px solid var(--background-modifier-border);
+	gap: 5px;
+}
