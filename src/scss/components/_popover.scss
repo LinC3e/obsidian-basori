@@ -1,0 +1,17 @@
+/* Popover */
+.popover,
+.suggestion-container,
+.menu {
+	width: var(--popover-width);
+	font-size: var(--popover-font-size);
+	background-color: var(--popover-background, var(--background-primary));
+	border-radius: 6px;
+	overflow: auto;
+}
+
+/* Preview PDF popover */
+.popover.hover-popover .pdf-viewer,
+.popover .pdf-embed {
+	width: var(--popover-pdf-width);
+	height: var(--popover-pdf-height);
+}

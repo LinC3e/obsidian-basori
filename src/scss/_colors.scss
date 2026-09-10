@@ -51,12 +51,39 @@
 	--indentation-guide-width-active: 2px;
 	--indentation-guide-color: #334155;
 	--indentation-guide-color-active: #3b82f6;
+
+	--modal-background: #0F172A;
+	--modal-border-color: #334155;
+
+	--nav-item-color: #94a3b8;
+	--nav-item-color-hover: #e2e8f0;
+	--nav-item-color-active: #f1f5f9;
+	--nav-item-color-selected: #f1f5f9;
+	--nav-item-color-highlighted: #60a5fa;
+
+	--nav-item-background-hover: #1e3a5f;
+	--nav-item-background-active: #254b7a;
+	--nav-item-background-selected: #1e3a5f;
+
+	--nav-indentation-guide-color: #334155;
+	--nav-collapse-icon-color: #64748b;
+	--nav-collapse-icon-color-collapsed: #94a3b8;
+
+	/* Navigation headings */
+	--nav-heading-color: #94a3b8;
+	--nav-heading-color-hover: #e2e8f0;
+	--nav-heading-color-collapsed: #64748b;
+	--nav-heading-color-colapsed-hover: #94a3b8;
+
+	--popover-background: #0b3582;
+	--popover-border-color: #183b6c;
+
 }
 
 .theme-light {
 	--background-primary: #F0F9FF;
 	--background-secondary: #E0F2FE;
-	--ribbon-background: #a1d4f6;
+	--ribbon-background: #9bd7ff;
 
 	--titlebar-background-focused: #E0F2FE;
 	--titlebar-border-color: #BAE6FD;
@@ -97,6 +124,33 @@
 	--indentation-guide-width-active: 2px;
 	--indentation-guide-color: #6bb7da;
 	--indentation-guide-color-active: #0284c7;
+
+	--modal-background: #E0F2FE;
+	--modal-border-color: #BAE6FD;
+
+	--nav-item-color: #334155;
+	--nav-item-color-hover: #0f172a;
+	--nav-item-color-active: #0f172a;
+	--nav-item-color-selected: #0f172a;
+	--nav-item-color-highlighted: #0284c7;
+
+	--nav-item-background-hover: #bae6fd;
+	--nav-item-background-active: #aae4ff;
+	--nav-item-background-selected: #bae6fd;
+
+	--nav-indentation-guide-color: #bae6fd;
+	--nav-collapse-icon-color: #64748b;
+	--nav-collapse-icon-color-collapsed: #334155;
+
+	/* Navigation headings */
+	--nav-heading-color: #475569;
+	--nav-heading-color-hover: #0f172a;
+	--nav-heading-color-collapsed: #94a3b8;
+	--nav-heading-color-colapsed-hover: #475569;
+
+	--popover-background: #E0F2FE;
+	--popover-border-color: #7dd3fc;
+
 }
 
 // Selection

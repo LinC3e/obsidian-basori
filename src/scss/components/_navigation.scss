@@ -1,0 +1,34 @@
+/* Navigation items (File Explorer, Backlinks, etc.) */
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self {
+	padding: var(--nav-item-padding);
+	font-size: var(--nav-item-size);
+	font-weight: var(--nav-item-weight);
+	color: var(--nav-item-color);
+	border-radius: 6px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.tree-item-self:hover {
+	background-color: var(--nav-item-background-hover);
+	color: var(--nav-item-color-hover);
+	font-weight: var(--nav-item-weight-hover);
+}
+
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+	background-color: var(--nav-item-background-active);
+	color: var(--nav-item-color-active);
+	font-weight: var(--nav-item-weight-active);
+}
+
+/* Indentation guide */
+.nav-folder-children,
+.tree-item-children {
+	margin-left: var(--nav-item-children-margin-start);
+	padding-left: var(--nav-item-children-padding-start);
+	border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .theme-dark {
   /* Backgrounds */
   --background-primary: #0F172A;
@@ -39,12 +38,32 @@
   --indentation-guide-width-active: 2px;
   --indentation-guide-color: #334155;
   --indentation-guide-color-active: #3b82f6;
+  --modal-background: #0F172A;
+  --modal-border-color: #334155;
+  --nav-item-color: #94a3b8;
+  --nav-item-color-hover: #e2e8f0;
+  --nav-item-color-active: #f1f5f9;
+  --nav-item-color-selected: #f1f5f9;
+  --nav-item-color-highlighted: #60a5fa;
+  --nav-item-background-hover: #1e3a5f;
+  --nav-item-background-active: #254b7a;
+  --nav-item-background-selected: #1e3a5f;
+  --nav-indentation-guide-color: #334155;
+  --nav-collapse-icon-color: #64748b;
+  --nav-collapse-icon-color-collapsed: #94a3b8;
+  /* Navigation headings */
+  --nav-heading-color: #94a3b8;
+  --nav-heading-color-hover: #e2e8f0;
+  --nav-heading-color-collapsed: #64748b;
+  --nav-heading-color-colapsed-hover: #94a3b8;
+  --popover-background: #0b3582;
+  --popover-border-color: #183b6c;
 }
 
 .theme-light {
   --background-primary: #F0F9FF;
   --background-secondary: #E0F2FE;
-  --ribbon-background: #a1d4f6;
+  --ribbon-background: #9bd7ff;
   --titlebar-background-focused: #E0F2FE;
   --titlebar-border-color: #BAE6FD;
   --titlebar-text-color: #3971c0;
@@ -75,6 +94,26 @@
   --indentation-guide-width-active: 2px;
   --indentation-guide-color: #6bb7da;
   --indentation-guide-color-active: #0284c7;
+  --modal-background: #E0F2FE;
+  --modal-border-color: #BAE6FD;
+  --nav-item-color: #334155;
+  --nav-item-color-hover: #0f172a;
+  --nav-item-color-active: #0f172a;
+  --nav-item-color-selected: #0f172a;
+  --nav-item-color-highlighted: #0284c7;
+  --nav-item-background-hover: #bae6fd;
+  --nav-item-background-active: #aae4ff;
+  --nav-item-background-selected: #bae6fd;
+  --nav-indentation-guide-color: #bae6fd;
+  --nav-collapse-icon-color: #64748b;
+  --nav-collapse-icon-color-collapsed: #334155;
+  /* Navigation headings */
+  --nav-heading-color: #475569;
+  --nav-heading-color-hover: #0f172a;
+  --nav-heading-color-collapsed: #94a3b8;
+  --nav-heading-color-colapsed-hover: #475569;
+  --popover-background: #E0F2FE;
+  --popover-border-color: #7dd3fc;
 }
 
 .theme-light ::selection {
@@ -89,9 +128,9 @@ body {
   --input-radius: 0px;
   --tab-radius-active: 0px;
   --checkbox-radius: 0px;
-  --toggle-radius: 0px;
-  --toggle-thumb-radius: 0px;
-  --slider-thumb-radius: 0px;
+  --toggle-radius: 15px;
+  --toggle-thumb-radius: 15px;
+  --slider-thumb-radius: 15px;
   --font-text-theme: inter, serif;
   --header-height: 40px;
   /* swatch */
@@ -107,6 +146,34 @@ body {
   --indentation-guide-editing-indent: 1.2em;
   --indentation-guide-reading-indent: 1.2em;
   --indentation-guide-source-indent: 1.2em;
+  /* modal */
+  --modal-width: 90%;
+  --modal-height: auto;
+  --modal-max-width: 1100px;
+  --modal-max-height: 85vh;
+  --modal-max-width-narrow: 700px;
+  --modal-border-width: 1px;
+  --modal-radius: 6px;
+  --modal-community-sidebar-width: 280px;
+  /* navigation */
+  --nav-item-size: var(--font-ui-small);
+  --nav-item-padding: 4px 8px;
+  --nav-item-parent-padding: 4px 8px;
+  --nav-item-children-padding-start: 12px;
+  --nav-item-children-margin-start: 12px;
+  --nav-item-weight: 400;
+  --nav-item-weight-hover: 400;
+  --nav-item-weight-active: 500;
+  --nav-item-white-space: nowrap;
+  --nav-indentation-guide-width: 1px;
+  /* Navigation headings */
+  --nav-heading-weight: 600;
+  --nav-heading-weight-hover: 600;
+  /* popover */
+  --popover-width: 360px;
+  --popover-font-size: var(--font-ui-small);
+  --popover-pdf-width: 450px;
+  --popover-pdf-height: 500px;
 }
 
 .workspace-tab-header.is-active::before,
@@ -211,7 +278,7 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   border-color: var(--indentation-guide-color);
 }
 
-/* Guía activa (cuando estás en esa línea) */
+/* active guides */
 .cm-active .cm-indent::before,
 .HyperMD-list-line.cm-active .cm-indent::before {
   border-width: var(--indentation-guide-width-active);
@@ -228,6 +295,81 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
 
 .menu-separator {
   margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+/* Modal */
+.modal {
+  background-color: var(--modal-background);
+  width: var(--modal-width);
+  height: var(--modal-height);
+  max-width: var(--modal-max-width);
+  max-height: var(--modal-max-height);
+  border: var(--modal-border-width) solid var(--modal-border-color);
+  border-radius: var(--modal-radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal.mod-narrow {
+  max-width: var(--modal-max-width-narrow);
+}
+
+/* Sidebar Community Plugins / Themes */
+.modal.mod-community-modal .modal-sidebar,
+.community-modal-sidebar {
+  width: var(--modal-community-sidebar-width);
+}
+
+/* Navigation items (File Explorer, Backlinks, etc.) */
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self {
+  padding: var(--nav-item-padding);
+  font-size: var(--nav-item-size);
+  font-weight: var(--nav-item-weight);
+  color: var(--nav-item-color);
+  border-radius: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.tree-item-self:hover {
+  background-color: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover);
+  font-weight: var(--nav-item-weight-hover);
+}
+
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  background-color: var(--nav-item-background-active);
+  color: var(--nav-item-color-active);
+  font-weight: var(--nav-item-weight-active);
+}
+
+/* Indentation guide */
+.nav-folder-children,
+.tree-item-children {
+  margin-left: var(--nav-item-children-margin-start);
+  padding-left: var(--nav-item-children-padding-start);
+  border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}
+
+/* Popover */
+.popover,
+.suggestion-container,
+.menu {
+  width: var(--popover-width);
+  font-size: var(--popover-font-size);
+  background-color: var(--popover-background, var(--background-primary));
+  border-radius: 6px;
+  overflow: auto;
+}
+
+/* Preview PDF popover */
+.popover.hover-popover .pdf-viewer,
+.popover .pdf-embed {
+  width: var(--popover-pdf-width);
+  height: var(--popover-pdf-height);
 }
 
 /* Color Swatch */

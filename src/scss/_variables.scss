@@ -7,7 +7,7 @@ body {
 	--checkbox-radius: 0px;
 	--toggle-radius: 0px;
 	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+	--slider-thumb-radius: 15px;
 
 	--font-text-theme: inter, serif;
 	--header-height: 40px;
@@ -27,4 +27,38 @@ body {
 	--indentation-guide-editing-indent: 1.2em;
 	--indentation-guide-reading-indent: 1.2em;
 	--indentation-guide-source-indent: 1.2em;
+
+	/* modal */
+	--modal-width: 90%;
+	--modal-height: auto;
+	--modal-max-width: 1100px;
+	--modal-max-height: 85vh;
+	--modal-max-width-narrow: 700px;
+	--modal-border-width: 1px;
+	--modal-radius: 6px;
+	--modal-community-sidebar-width: 280px;
+
+	/* navigation */
+	--nav-item-size: var(--font-ui-small);
+	--nav-item-padding: 4px 8px;
+	--nav-item-parent-padding: 4px 8px;
+	--nav-item-children-padding-start: 12px;
+	--nav-item-children-margin-start: 12px;
+	--nav-item-weight: 400;
+	--nav-item-weight-hover: 400;
+	--nav-item-weight-active: 500;
+	--nav-item-white-space: nowrap;
+
+	--nav-indentation-guide-width: 1px;
+
+	/* Navigation headings */
+	--nav-heading-weight: 600;
+	--nav-heading-weight-hover: 600;
+
+	/* popover */
+	--popover-width: 360px;
+	--popover-font-size: var(--font-ui-small);
+	--popover-pdf-width: 450px;
+	--popover-pdf-height: 500px;
+
 }
