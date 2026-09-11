@@ -1,0 +1,35 @@
+/* Vault Profile (sidebar footer / switcher) */
+.workspace-sidedock-vault-profile,
+.vault-profile {
+	display: var(--vault-profile-display);
+	font-size: var(--vault-profile-font-size);
+	font-weight: var(--vault-profile-font-weight);
+	color: var(--vault-profile-color);
+	border-radius: 0px; /* estilo square */
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.workspace-sidedock-vault-profile:hover,
+.vault-profile:hover {
+	color: var(--vault-profile-color-hover);
+}
+
+/* btns vault profile */
+.workspace-sidedock-vault-profile .vault-profile-actions,
+.vault-profile-actions {
+	display: var(--vault-profile-actions-display);
+	gap: 4px;
+}
+
+.workspace-sidedock-vault-profile .clickable-icon,
+.vault-profile .clickable-icon {
+	color: var(--vault-profile-color);
+	border-radius: 0px;
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.workspace-sidedock-vault-profile .clickable-icon:hover,
+.vault-profile .clickable-icon:hover {
+	color: var(--vault-profile-color-hover);
+	background-color: var(--background-modifier-hover);
+}

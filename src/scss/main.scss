@@ -13,3 +13,10 @@
 @use 'components/navigation';
 @use 'components/popover';
 @use 'components/swatch';
+@use 'components/tabs';
+
+/* Editor */
+@use 'editor/headings';
+
+/* Windows */
+@use 'windows/vault-profile';

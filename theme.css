@@ -17,16 +17,6 @@
   --interactive-normal: #10203b;
   --interactive-hover: #0b3582;
   --text-on-accent: #ffffff;
-  /*  CHECKBOX */
-  --checkbox-radius: 6px;
-  --checkbox-size: 16px;
-  --checkbox-color: #3b82f6;
-  --checkbox-color-hover: #60a5fa;
-  --checkbox-marker-color: #ffffff;
-  --checkbox-border-color: #475569;
-  --checkbox-border-color-hover: #64748b;
-  --checklist-done-color: #94a3b8;
-  --checklist-done-decoration: line-through;
   --drag-ghost-background: #1e3a5f;
   --drag-ghost-text-color: #e2e8f0;
   --dropdown-background-hover: #0b3582;
@@ -58,6 +48,31 @@
   --nav-heading-color-colapsed-hover: #94a3b8;
   --popover-background: #0b3582;
   --popover-border-color: #183b6c;
+  --tab-background-active: #1e3a5f;
+  --tab-text-color: #94a3b8;
+  --tab-text-color-active: #e2e8f0;
+  --tab-text-color-focused: #94a3b8;
+  --tab-text-color-focused-active: #f1f5f9;
+  --tab-text-color-focused-highlighted: #60a5fa;
+  --tab-text-color-focused-active-current: #ffffff;
+  --tab-container-background: #0F172A;
+  --tab-divider-color: #334155;
+  --tab-outline-color: #334155;
+  --background-modifier-form-field: #1e3a5f;
+  --background-modifier-border: #334155;
+  --background-modifier-border-hover: #475569;
+  --background-modifier-border-focus: #3b82f6;
+  --toggle-thumb-color: #3b82f6;
+  --color-accent: #b1cbfd;
+  --vault-profile-color: #b8b894;
+  --vault-profile-color-hover: #e2e8f0;
+  --heading-formatting: #334155;
+  --h1-color: #93c5fd;
+  --h2-color: #60a5fa;
+  --h3-color: #3b82f6;
+  --h4-color: #2563eb;
+  --h5-color: #3a6fff;
+  --h6-color: #3564fd;
 }
 
 .theme-light {
@@ -74,15 +89,6 @@
   --interactive-normal: #E0F2FE;
   --interactive-hover: #7dd3fc;
   --text-on-accent: #ffffff;
-  --checkbox-radius: 6px;
-  --checkbox-size: 17px;
-  --checkbox-color: #0284c7; /*  CTA light */
-  --checkbox-color-hover: #0369a1;
-  --checkbox-marker-color: #ffffff;
-  --checkbox-border-color: #6bb7da;
-  --checkbox-border-color-hover: #38bdf8;
-  --checklist-done-color: #3573ca;
-  --checklist-done-decoration: line-through;
   --drag-ghost-background: #bae6fd;
   --drag-ghost-text-color: #0f172a;
   --dropdown-background-hover: #7dd3fc;
@@ -114,6 +120,31 @@
   --nav-heading-color-colapsed-hover: #475569;
   --popover-background: #E0F2FE;
   --popover-border-color: #7dd3fc;
+  --tab-background-active: #bae6fd;
+  --tab-text-color: #64748b;
+  --tab-text-color-active: #0f172a;
+  --tab-text-color-focused: #475569;
+  --tab-text-color-focused-active: #3573ca;
+  --tab-text-color-focused-highlighted: #0284c7;
+  --tab-text-color-focused-active-current: #0284c7;
+  --tab-container-background: #F0F9FF;
+  --tab-divider-color: #BAE6FD;
+  --tab-outline-color: #BAE6FD;
+  --background-modifier-form-field: #e0f2fe;
+  --background-modifier-border: #bae6fd;
+  --background-modifier-border-hover: #7dd3fc;
+  --background-modifier-border-focus: #0284c7;
+  --toggle-thumb-color: #0284c7;
+  --color-accent: #0284c7;
+  --vault-profile-color: #475569;
+  --vault-profile-color-hover: #0f172a;
+  --heading-formatting: #7dd3fc;
+  --h1-color: #0c4a6e;
+  --h2-color: #075985;
+  --h3-color: #0369a1;
+  --h4-color: #0284c7;
+  --h5-color: #0ea5e9;
+  --h6-color: #2898c7;
 }
 
 .theme-light ::selection {
@@ -127,7 +158,6 @@ body {
   --radius-l: 0px;
   --input-radius: 0px;
   --tab-radius-active: 0px;
-  --checkbox-radius: 0px;
   --toggle-radius: 15px;
   --toggle-thumb-radius: 15px;
   --slider-thumb-radius: 15px;
@@ -174,6 +204,93 @@ body {
   --popover-font-size: var(--font-ui-small);
   --popover-pdf-width: 450px;
   --popover-pdf-height: 500px;
+  /* tabs */
+  --tab-font-size: var(--font-ui-small);
+  --tab-font-weight: 400;
+  --tab-outline-width: 1px;
+  --tab-curve: 0px;
+  --tab-radius: 0px;
+  --tab-radius-active: 0px;
+  --tab-width: 180px;
+  --tab-max-width: 320px;
+  /* Tab stacks */
+  --tab-stacked-font-size: var(--font-ui-smaller);
+  --tab-stacked-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  --input-height: 32px;
+  --input-radius: 15px;
+  --input-font-weight: 400;
+  --input-border-width: 1px;
+  --vault-profile-display: flex;
+  --vault-profile-actions-display: flex;
+  --vault-profile-font-size: var(--font-ui-small);
+  --vault-profile-font-weight: 500;
+  --heading-spacing: 1.5em;
+  --h1-size: 1.8em;
+  --h2-size: 1.5em;
+  --h3-size: 1.3em;
+  --h4-size: 1.15em;
+  --h5-size: 1.05em;
+  --h6-size: 1em;
+  --h1-weight: 700;
+  --h2-weight: 650;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 500;
+  --h6-weight: 500;
+  --h1-line-height: 1.3;
+  --h2-line-height: 1.3;
+  --h3-line-height: 1.35;
+  --h4-line-height: 1.4;
+  --h5-line-height: 1.4;
+  --h6-line-height: 1.4;
+  --h1-style: normal;
+  --h2-style: normal;
+  --h3-style: normal;
+  --h4-style: normal;
+  --h5-style: normal;
+  --h6-style: normal;
+  --h1-variant: normal;
+  --h2-variant: normal;
+  --h3-variant: normal;
+  --h4-variant: normal;
+  --h5-variant: normal;
+  --h6-variant: normal;
+  --h1-font: var(--font-text-theme);
+  --h2-font: var(--font-text-theme);
+  --h3-font: var(--font-text-theme);
+  --h4-font: var(--font-text-theme);
+  --h5-font: var(--font-text-theme);
+  --h6-font: var(--font-text-theme);
+}
+
+/* Text Input */
+input[type=text],
+input[type=search],
+input[type=email],
+input[type=password],
+input[type=number],
+textarea,
+.metadata-input-text {
+  height: var(--input-height);
+  border-radius: var(--input-radius);
+  font-weight: var(--input-font-weight);
+  border: var(--input-border-width) solid var(--background-modifier-border);
+  color: var(--text-normal);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+input[type=text]:hover,
+input[type=search]:hover,
+textarea:hover {
+  border-color: var(--background-modifier-border-hover);
+}
+
+input[type=text]:focus,
+input[type=search]:focus,
+textarea:focus {
+  border-color: var(--background-modifier-border-focus);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
 }
 
 .workspace-tab-header.is-active::before,
@@ -186,6 +303,21 @@ svg * {
   stroke-linejoin: miter;
   rx: 0;
   ry: 0;
+}
+
+button,
+.clickable-icon,
+.nav-file-title,
+.nav-folder-title,
+.workspace-tab-header {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.workspace-tab-header,
+.nav-file-title,
+.nav-folder-title,
+.clickable-icon {
+  user-select: none;
 }
 
 /* Components */
@@ -388,6 +520,149 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
 .theme-color-swatch:hover {
   border-color: var(--interactive-accent);
   transform: scale(1.05);
+}
+
+/* Tabs */
+.workspace-tab-header {
+  border-radius: var(--tab-radius);
+  font-size: var(--tab-font-size);
+  font-weight: var(--tab-font-weight);
+  color: var(--tab-text-color);
+  max-width: var(--tab-max-width);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--tab-background-active);
+  color: var(--tab-text-color-focused-active-current);
+  border-radius: var(--tab-radius-active);
+}
+
+/* container for tabs */
+.workspace-tab-header-container {
+  background-color: var(--tab-container-background);
+  border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+
+/* Divider for tabs */
+.workspace-tab-header-inner-title {
+  color: inherit;
+}
+
+/* Stacked tabs */
+.mod-stacked .workspace-tab-header {
+  font-size: var(--tab-stacked-font-size);
+  box-shadow: var(--tab-stacked-shadow);
+}
+
+/* Editor */
+/* Headings */
+.cm-header-1, .markdown-preview-view h1,
+.HyperMD-header-1 {
+  font-family: var(--h1-font);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  font-style: var(--h1-style);
+  font-variant: var(--h1-variant);
+  line-height: var(--h1-line-height);
+  color: var(--h1-color);
+}
+
+.cm-header-2, .markdown-preview-view h2,
+.HyperMD-header-2 {
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  font-style: var(--h2-style);
+  font-variant: var(--h2-variant);
+  line-height: var(--h2-line-height);
+  color: var(--h2-color);
+}
+
+.cm-header-3, .markdown-preview-view h3,
+.HyperMD-header-3 {
+  font-family: var(--h3-font);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  font-style: var(--h3-style);
+  font-variant: var(--h3-variant);
+  line-height: var(--h3-line-height);
+  color: var(--h3-color);
+}
+
+.cm-header-4, .markdown-preview-view h4,
+.HyperMD-header-4 {
+  font-family: var(--h4-font);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  font-style: var(--h4-style);
+  font-variant: var(--h4-variant);
+  line-height: var(--h4-line-height);
+  color: var(--h4-color);
+}
+
+.cm-header-5, .markdown-preview-view h5,
+.HyperMD-header-5 {
+  font-family: var(--h5-font);
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
+  font-style: var(--h5-style);
+  font-variant: var(--h5-variant);
+  line-height: var(--h5-line-height);
+  color: var(--h5-color);
+}
+
+.cm-header-6, .markdown-preview-view h6,
+.HyperMD-header-6 {
+  font-family: var(--h6-font);
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  font-style: var(--h6-style);
+  font-variant: var(--h6-variant);
+  line-height: var(--h6-line-height);
+  color: var(--h6-color);
+}
+
+/* Color of the # ## ### in the editor */
+.cm-formatting-header {
+  color: var(--heading-formatting);
+}
+
+/* Windows */
+/* Vault Profile (sidebar footer / switcher) */
+.workspace-sidedock-vault-profile,
+.vault-profile {
+  display: var(--vault-profile-display);
+  font-size: var(--vault-profile-font-size);
+  font-weight: var(--vault-profile-font-weight);
+  color: var(--vault-profile-color);
+  border-radius: 0px; /* estilo square */
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.workspace-sidedock-vault-profile:hover,
+.vault-profile:hover {
+  color: var(--vault-profile-color-hover);
+}
+
+/* btns vault profile */
+.workspace-sidedock-vault-profile .vault-profile-actions,
+.vault-profile-actions {
+  display: var(--vault-profile-actions-display);
+  gap: 4px;
+}
+
+.workspace-sidedock-vault-profile .clickable-icon,
+.vault-profile .clickable-icon {
+  color: var(--vault-profile-color);
+  border-radius: 0px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.workspace-sidedock-vault-profile .clickable-icon:hover,
+.vault-profile .clickable-icon:hover {
+  color: var(--vault-profile-color-hover);
+  background-color: var(--background-modifier-hover);
 }
 
 /*# sourceMappingURL=theme.css.map */

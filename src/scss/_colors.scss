@@ -24,20 +24,6 @@
 	--interactive-hover: #0b3582;
 	--text-on-accent: #ffffff;
 
-	/*  CHECKBOX */
-	--checkbox-radius: 6px;
-	--checkbox-size: 16px;
-
-	--checkbox-color: #3b82f6;
-	--checkbox-color-hover: #60a5fa;
-	--checkbox-marker-color: #ffffff;
-
-	--checkbox-border-color: #475569;
-	--checkbox-border-color-hover: #64748b;
-
-	--checklist-done-color: #94a3b8;
-	--checklist-done-decoration: line-through;
-
 	--drag-ghost-background: #1e3a5f;
 	--drag-ghost-text-color: #e2e8f0;
 
@@ -78,6 +64,38 @@
 	--popover-background: #0b3582;
 	--popover-border-color: #183b6c;
 
+	--tab-background-active: #1e3a5f;
+	--tab-text-color: #94a3b8;
+	--tab-text-color-active: #e2e8f0;
+	--tab-text-color-focused: #94a3b8;
+	--tab-text-color-focused-active: #f1f5f9;
+	--tab-text-color-focused-highlighted: #60a5fa;
+	--tab-text-color-focused-active-current: #ffffff;
+
+	--tab-container-background: #0F172A;
+	--tab-divider-color: #334155;
+	--tab-outline-color: #334155;
+
+	--background-modifier-form-field: #1e3a5f;
+	--background-modifier-border: #334155;
+	--background-modifier-border-hover: #475569;
+	--background-modifier-border-focus: #3b82f6;
+
+	--toggle-thumb-color: #3b82f6;
+	--color-accent: #b1cbfd;
+
+	--vault-profile-color: #b8b894;
+	--vault-profile-color-hover: #e2e8f0;
+
+	--heading-formatting: #334155;
+
+	--h1-color: #93c5fd;
+	--h2-color: #60a5fa;
+	--h3-color: #3b82f6;
+	--h4-color: #2563eb;
+	--h5-color: #3a6fff;
+	--h6-color: #3564fd;
+
 }
 
 .theme-light {
@@ -97,19 +115,6 @@
 	--interactive-normal: #E0F2FE;
 	--interactive-hover: #7dd3fc;
 	--text-on-accent: #ffffff;
-
-	--checkbox-radius: 6px;
-	--checkbox-size: 17px;
-
-	--checkbox-color: #0284c7;                     /*  CTA light */
-	--checkbox-color-hover: #0369a1;
-	--checkbox-marker-color: #ffffff;
-
-	--checkbox-border-color: #6bb7da;
-	--checkbox-border-color-hover: #38bdf8;
-
-	--checklist-done-color: #3573ca;
-	--checklist-done-decoration: line-through;
 
 	--drag-ghost-background: #bae6fd;
 	--drag-ghost-text-color: #0f172a;
@@ -151,6 +156,37 @@
 	--popover-background: #E0F2FE;
 	--popover-border-color: #7dd3fc;
 
+	--tab-background-active: #bae6fd;
+	--tab-text-color: #64748b;
+	--tab-text-color-active: #0f172a;
+	--tab-text-color-focused: #475569;
+	--tab-text-color-focused-active: #3573ca;
+	--tab-text-color-focused-highlighted: #0284c7;
+	--tab-text-color-focused-active-current: #0284c7;
+
+	--tab-container-background: #F0F9FF;
+	--tab-divider-color: #BAE6FD;
+	--tab-outline-color: #BAE6FD;
+
+	--background-modifier-form-field: #e0f2fe;
+	--background-modifier-border: #bae6fd;
+	--background-modifier-border-hover: #7dd3fc;
+	--background-modifier-border-focus: #0284c7;
+
+	--toggle-thumb-color: #0284c7;
+	--color-accent: #0284c7;
+
+	--vault-profile-color: #475569;
+	--vault-profile-color-hover: #0f172a;
+
+	--heading-formatting: #7dd3fc;
+
+	--h1-color: #0c4a6e;
+	--h2-color: #075985;
+	--h3-color: #0369a1;
+	--h4-color: #0284c7;
+	--h5-color: #0ea5e9;
+	--h6-color: #2898c7;
 }
 
 // Selection

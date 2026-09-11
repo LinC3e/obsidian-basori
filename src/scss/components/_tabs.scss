@@ -1,0 +1,32 @@
+/* Tabs */
+.workspace-tab-header {
+	border-radius: var(--tab-radius);
+	font-size: var(--tab-font-size);
+	font-weight: var(--tab-font-weight);
+	color: var(--tab-text-color);
+	max-width: var(--tab-max-width);
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.workspace-tab-header.is-active {
+	background-color: var(--tab-background-active);
+	color: var(--tab-text-color-focused-active-current);
+	border-radius: var(--tab-radius-active);
+}
+
+/* container for tabs */
+.workspace-tab-header-container {
+	background-color: var(--tab-container-background);
+	border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+
+/* Divider for tabs */
+.workspace-tab-header-inner-title {
+	color: inherit;
+}
+
+/* Stacked tabs */
+.mod-stacked .workspace-tab-header {
+	font-size: var(--tab-stacked-font-size);
+	box-shadow: var(--tab-stacked-shadow);
+}

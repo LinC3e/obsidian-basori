@@ -11,3 +11,18 @@ svg * {
 	rx: 0;
 	ry: 0;
 }
+
+button,
+.clickable-icon,
+.nav-file-title,
+.nav-folder-title,
+.workspace-tab-header {
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.workspace-tab-header,
+.nav-file-title,
+.nav-folder-title,
+.clickable-icon {
+	user-select: none;
+}
