@@ -96,6 +96,21 @@
 	--h5-color: #3a6fff;
 	--h6-color: #3564fd;
 
+	--callout-default: rgb(100, 116, 139);
+	--callout-info: rgb(56, 189, 248);
+	--callout-summary: rgb(148, 163, 184);
+	--callout-tip: rgb(45, 212, 191);
+	--callout-todo: rgb(96, 165, 250);
+	--callout-important: rgb(129, 140, 248);
+	--callout-success: rgb(52, 211, 153);
+	--callout-question: rgb(251, 191, 36);
+	--callout-warning: rgb( 251, 146, 60);
+	--callout-fail: rgb(248, 113, 113);
+	--callout-error: rgb(239, 68, 68);
+	--callout-bug: rgb(252, 107, 131);
+	--callout-example: rgb(167, 139, 250);
+	--callout-quote: rgb(148, 163, 184);
+
 }
 
 .theme-light {
@@ -187,6 +202,22 @@
 	--h4-color: #0284c7;
 	--h5-color: #0ea5e9;
 	--h6-color: #2898c7;
+
+	--callout-default: rgb(71, 85, 105);
+	--callout-info: rgb(2, 132, 199);
+	--callout-summary: rgb(100, 116, 139);
+	--callout-tip: rgba(223, 11, 230, 0.861);
+	--callout-todo: rgb(37, 99, 235);
+	--callout-important: rgb(79, 70, 229);
+	--callout-success: rgb(5, 150, 105);
+	--callout-question: rgb(133, 111, 255);
+	--callout-warning: rgb(255, 189, 21);
+	--callout-fail: rgba(255, 94, 7, 0.774);
+	--callout-error: rgb(255, 38, 0);
+	--callout-bug: rgb(255, 94, 129);
+	--callout-example: rgb(124, 58, 237);
+	--callout-quote: rgb(100, 116, 139);
+
 }
 
 // Selection
