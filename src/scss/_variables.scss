@@ -139,6 +139,9 @@ body {
 	--callout-content-padding: 12px 14px;
 	--callout-content-background: transparent;
 
+	--blockquote-border-thickness: 3px;
+	--blockquote-font-style: italic;
+
 }
 
 /* Text Input */
@@ -169,4 +172,30 @@ textarea:focus {
 	border-color: var(--background-modifier-border-focus);
 	outline: none;
 	box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
+}
+
+/* Blockquote */
+blockquote {
+	background-color: var(--blockquote-background-color);
+	border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
+	border-radius: 6px;
+	color: var(--blockquote-color);
+	font-style: var(--blockquote-font-style);
+	padding: 12px 16px;
+	margin: 2em ;
+}
+
+blockquote > :first-child {
+	margin-top: 0;
+}
+
+blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+/* Nested blockquotes */
+blockquote blockquote {
+	background-color: transparent;
+	border-left-color: var(--text-muted);
+	margin-left: 0.5em;
 }

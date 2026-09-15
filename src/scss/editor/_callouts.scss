@@ -1,5 +1,3 @@
-/* ========== CALLOUT — diseño limpio, sin iconos ========== */
-
 .callout {
 	border-width: var(--callout-border-width);
 	border-radius: var(--callout-radius);
@@ -39,7 +37,7 @@
 	margin-bottom: 0;
 }
 
-/* ========== COLORES POR TIPO ========== */
+/* type col */
 
 .callout[data-callout="note"],
 .callout:not([data-callout]) {

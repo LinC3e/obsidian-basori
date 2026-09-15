@@ -111,6 +111,12 @@
 	--callout-example: rgb(167, 139, 250);
 	--callout-quote: rgb(148, 163, 184);
 
+	--blockquote-background-color: rgba(30, 58, 95, 0.35);
+	--blockquote-border-color: #3b82f6;
+	--blockquote-color: #639fff;
+
+	--code-background: #11111B;
+
 }
 
 .theme-light {
@@ -218,6 +224,11 @@
 	--callout-example: rgb(124, 58, 237);
 	--callout-quote: rgb(100, 116, 139);
 
+	--blockquote-background-color: rgba(186, 230, 253, 0.45);
+	--blockquote-border-color: #0284c7;
+	--blockquote-color: #3971c0;
+
+	--code-background: #e3faff;
 }
 
 // Selection
