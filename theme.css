@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .theme-dark {
   /* Backgrounds */
   --background-primary: #0F172A;
@@ -578,6 +579,34 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   height: var(--popover-pdf-height);
 }
 
+/* Sidebar background — Style Settings toggle: basori-sidebar-bg */
+body.basori-sidebar-bg .nav-files-container {
+  position: relative;
+  background-image: url("https://raw.githubusercontent.com/LinC3e/obsidian-basori/main/assets/basori.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+body.basori-sidebar-bg .nav-files-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+body.basori-sidebar-bg .nav-files-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.theme-dark.basori-sidebar-bg .nav-files-container::before {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.65) 50%, rgba(15, 23, 42, 0.45) 100%);
+}
+
+body.theme-light.basori-sidebar-bg .nav-files-container::before {
+  background: linear-gradient(180deg, rgba(240, 249, 255, 0.9) 0%, rgba(240, 249, 255, 0.7) 50%, rgba(240, 249, 255, 0.5) 100%);
+}
+
 /* Color Swatch */
 .color-swatch,
 .theme-color-swatch,
@@ -850,3 +879,16 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
 }
 
 /*# sourceMappingURL=theme.css.map */
+
+
+/* @settings
+name: Basori
+id: basori
+settings:
+  -
+    id: basori-sidebar-bg
+    title: Sidebar background image
+    description: Show Basori Tiara artwork in the file explorer
+    type: class-toggle
+    default: false
+*/

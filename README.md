@@ -13,7 +13,7 @@
 <!-- Reemplaza estas rutas con tus capturas reales -->
 | Dark | Light |
 |------|-------|
-| ![Dark mode](screenshots/preview-dark.png) | ![Light mode](screenshots/preview-light.png) |
+| ![Dark mode](assets/preview-dark.png) | ![Light mode](assets/preview-light.png) |
 
 ---
 
@@ -63,6 +63,18 @@ YourVault/.obsidian/themes/Basori/
 ```
 
 3. In Obsidian: **Settings → Appearance → Themes → Basori**
+
+---
+
+## Try the preview
+
+Open & Copy [`docs/theme-preview.md`](docs/theme-preview.md) in Obsidian to test headings, callouts, tables, and more.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE)
 
 ---
 
