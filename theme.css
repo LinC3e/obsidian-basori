@@ -92,6 +92,12 @@
   --blockquote-border-color: #3b82f6;
   --blockquote-color: #639fff;
   --code-background: #11111B;
+  --link-color: #60a5fa;
+  --link-color-hover: #93c5fd;
+  --link-unresolved-color: #94a3b8;
+  --link-unresolved-decoration-color: #64748b;
+  --link-external-color: #38bdf8;
+  --link-external-color-hover: #7dd3fc;
 }
 
 .theme-light {
@@ -182,6 +188,12 @@
   --blockquote-border-color: #0284c7;
   --blockquote-color: #3971c0;
   --code-background: #e3faff;
+  --link-color: #0284c7;
+  --link-color-hover: #0369a1;
+  --link-unresolved-color: #64748b;
+  --link-unresolved-decoration-color: #94a3b8;
+  --link-external-color: #0ea5e9;
+  --link-external-color-hover: #0284c7;
 }
 
 .theme-light ::selection {
@@ -310,6 +322,16 @@ body {
   --callout-content-background: transparent;
   --blockquote-border-thickness: 3px;
   --blockquote-font-style: italic;
+  /* links */
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: 1px;
+  --link-weight: 500;
+  --link-unresolved-opacity: 0.7;
+  --link-unresolved-filter: none;
+  --link-unresolved-decoration-style: dotted;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
 }
 
 /* Text Input */
@@ -839,6 +861,48 @@ body.theme-light.basori-sidebar-bg .nav-files-container::before {
 /* Color of the # ## ### in the editor */
 .cm-formatting-header {
   color: var(--heading-formatting);
+}
+
+/* Links */
+a,
+.cm-underline,
+.internal-link,
+.external-link {
+  font-weight: var(--link-weight);
+  transition: color 0.15s ease;
+}
+
+/* Resolved internal */
+.internal-link {
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
+  text-decoration-thickness: var(--link-decoration-thickness);
+}
+
+.internal-link:hover {
+  color: var(--link-color-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+
+/* Unresolved internal */
+.internal-link.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: var(--link-unresolved-opacity);
+  filter: var(--link-unresolved-filter);
+  text-decoration-line: underline;
+  text-decoration-style: var(--link-unresolved-decoration-style);
+  text-decoration-color: var(--link-unresolved-decoration-color);
+}
+
+/* External */
+.external-link {
+  color: var(--link-external-color);
+  text-decoration: var(--link-external-decoration);
+}
+
+.external-link:hover {
+  color: var(--link-external-color-hover);
+  text-decoration: var(--link-external-decoration-hover);
 }
 
 /* Windows */
