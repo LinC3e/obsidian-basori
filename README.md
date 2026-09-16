@@ -36,13 +36,16 @@ Dark mode uses deep slate blues; light mode uses soft sky backgrounds. Both keep
   - Tabs & tab stacks
   - Buttons, inputs, dropdowns, checkboxes
   - Modals, dialogs, popovers
-  - Navigation (File Explorer)
-  - Callouts (unique colors per type, no icons)
+  - Callouts (unique colors per type)
   - Blockquotes, headings, pills
   - Scrollbars, drag ghost, sliders
 - Built with a modular **SCSS** structure for maintainability
 
 ---
+
+## Plugins Support
+
+  - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 
 ## Installation
 
@@ -75,12 +78,3 @@ Open & Copy [`docs/theme-preview.md`](docs/theme-preview.md) in Obsidian to test
 ## License
 
 MIT — see [LICENSE](LICENSE)
-
----
-
-## Development
-
-```bash
-npm install
-npm run build    # compile SCSS → theme.css
-npm run watch    # rebuild on change

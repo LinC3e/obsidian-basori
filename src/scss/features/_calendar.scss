@@ -1,0 +1,107 @@
+/* =========================================================
+   Calendar — Compact mode (body.basori-calendar-compact)
+   Layout only — no color changes
+   ========================================================= */
+
+body.basori-calendar-compact #calendar-container {
+	font-size: 0.78em;
+	line-height: 1.2;
+	padding: 4px 6px 8px;
+	letter-spacing: 0.01em;
+}
+
+/* Header más bajo */
+body.basori-calendar-compact #calendar-container .month,
+body.basori-calendar-compact #calendar-container .year {
+	font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+body.basori-calendar-compact #calendar-container .arrow,
+body.basori-calendar-compact #calendar-container .reset-button {
+	padding: 2px 4px;
+	border-radius: 0;
+	opacity: 0.85;
+}
+
+/* Días de la semana (S M T ...) */
+body.basori-calendar-compact #calendar-container th {
+	padding: 2px 0;
+	font-size: 0.7em;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.8;
+}
+
+/* Celdas compactas pero clicables */
+body.basori-calendar-compact #calendar-container .day,
+body.basori-calendar-compact #calendar-container .week-num {
+	padding: 2px 1px 4px;
+	min-height: 1.85em;
+	border-radius: 0;
+	vertical-align: top;
+}
+
+/* Número del día un poco más marcado */
+body.basori-calendar-compact #calendar-container .day {
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
+}
+
+body.basori-calendar-compact #calendar-container .today,
+body.basori-calendar-compact #calendar-container .active {
+	font-weight: 700;
+}
+
+/* Hoy / activo: marco fino (usa bordes del tema) */
+body.basori-calendar-compact #calendar-container .today {
+	box-shadow: inset 0 0 0 1px var(--background-modifier-border);
+}
+
+body.basori-calendar-compact #calendar-container .active {
+	box-shadow: inset 0 0 0 1.5px var(--interactive-accent);
+}
+
+body.basori-calendar-compact #calendar-container .day:hover,
+body.basori-calendar-compact #calendar-container .week-num:hover {
+	box-shadow: inset 0 0 0 1px var(--background-modifier-border);
+}
+
+/* Dots más pequeños y alineados */
+body.basori-calendar-compact #calendar-container .dot-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1px;
+	margin-top: 1px;
+	min-height: 4px;
+	max-height: 5px;
+}
+
+body.basori-calendar-compact #calendar-container .dot,
+body.basori-calendar-compact #calendar-container .task {
+	width: 3px;
+	height: 3px;
+	border-radius: 0;
+	margin: 0;
+	flex-shrink: 0;
+}
+
+/* Week numbers discretos */
+body.basori-calendar-compact #calendar-container .week-num {
+	font-size: 0.7em;
+	font-weight: 500;
+	opacity: 0.85;
+	padding-top: 3px;
+}
+
+/* Tabla sin holgura extra */
+body.basori-calendar-compact #calendar-container table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	border-spacing: 0;
+}

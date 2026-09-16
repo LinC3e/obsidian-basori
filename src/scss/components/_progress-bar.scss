@@ -1,0 +1,46 @@
+progress {
+	appearance: none;
+	-webkit-appearance: none;
+
+	width: 50%;
+	height: 14px;
+
+	border: none;
+	border-radius: 999px;
+
+	background-color: var(--background-modifier-border);
+	overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+	background-color: var(--background-modifier-border);
+	border-radius: 999px;
+}
+
+progress::-webkit-progress-value {
+	background: linear-gradient(
+		90deg,
+		#ef4444 0%,
+		#f97316 25%,
+		#eab308 50%,
+		#84cc16 75%,
+		#22c55e 100%
+	);
+
+	border-radius: 999px;
+	transition: width 0.25s ease;
+}
+
+progress::-moz-progress-bar {
+	background: linear-gradient(
+		90deg,
+		#ef4444 0%,
+		#f97316 25%,
+		#eab308 50%,
+		#84cc16 75%,
+		#22c55e 100%
+	);
+
+	border-radius: 999px;
+	transition: width 0.25s ease;
+}
