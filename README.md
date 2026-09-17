@@ -46,6 +46,10 @@ Dark mode uses deep slate blues; light mode uses soft sky backgrounds. Both keep
 ## Plugins Support
 
   - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
+  - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
+
+### Checklist
+![checkbox](assets/checkbox-styles.png)
 
 ## Installation
 
