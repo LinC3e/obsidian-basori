@@ -1,35 +1,75 @@
-/* Vault Profile (sidebar footer / switcher) */
+/* vailt profile - side footer */
+
 .workspace-sidedock-vault-profile,
 .vault-profile {
 	display: var(--vault-profile-display);
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--vault-profile-gap, 8px);
+	padding: var(--vault-profile-padding, 8px 10px);
 	font-size: var(--vault-profile-font-size);
 	font-weight: var(--vault-profile-font-weight);
 	color: var(--vault-profile-color);
-	border-radius: 0px; /* estilo square */
-	transition: color 0.15s ease, background-color 0.15s ease;
+	border-radius: 0;
+	border-top: 1px solid var(--vault-profile-border-color, var(--background-modifier-border));
+	letter-spacing: 0.01em;
+	transition:
+		color 0.12s ease,
+		background-color 0.12s ease;
+}
+
+/* vault name */
+.workspace-sidedock-vault-profile .vault-profile-name,
+.vault-profile .vault-profile-name,
+.workspace-sidedock-vault-profile .workspace-drawer-vault-name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 500;
 }
 
 .workspace-sidedock-vault-profile:hover,
 .vault-profile:hover {
 	color: var(--vault-profile-color-hover);
+	background-color: var(--vault-profile-bg-hover, var(--background-modifier-hover));
 }
 
-/* btns vault profile */
+/* actions*/
 .workspace-sidedock-vault-profile .vault-profile-actions,
 .vault-profile-actions {
 	display: var(--vault-profile-actions-display);
-	gap: 4px;
+	align-items: center;
+	gap: 2px;
+	flex-shrink: 0;
 }
 
 .workspace-sidedock-vault-profile .clickable-icon,
 .vault-profile .clickable-icon {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: var(--vault-profile-color);
-	border-radius: 0px;
-	transition: color 0.15s ease, background-color 0.15s ease;
+	border-radius: 0;
+	opacity: 0.85;
+	transition:
+		color 0.12s ease,
+		opacity 0.12s ease,
+		background-color 0.12s ease;
 }
 
 .workspace-sidedock-vault-profile .clickable-icon:hover,
 .vault-profile .clickable-icon:hover {
 	color: var(--vault-profile-color-hover);
+	opacity: 1;
 	background-color: var(--background-modifier-hover);
+}
+
+.workspace-sidedock-vault-profile .clickable-icon:active,
+.vault-profile .clickable-icon:active {
+	opacity: 1;
+	color: var(--icon-color-active, var(--interactive-accent));
 }

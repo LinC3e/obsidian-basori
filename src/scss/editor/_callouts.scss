@@ -108,3 +108,15 @@
 .callout[data-callout="cite"] {
 	--callout-color: var(--callout-quote);
 }
+
+/* [!basori] — mismo sistema de bg que el resto */
+.callout[data-callout="basori"] {
+	--callout-color: var(--callout-basori);
+	--callout-icon: lucide-sparkles;
+}
+
+/* [!tiara] */
+.callout[data-callout="tiara"] {
+	--callout-color: var(--callout-tiara);
+	--callout-icon: lucide-crown;
+}
