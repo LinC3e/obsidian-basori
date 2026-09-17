@@ -26,3 +26,77 @@ button,
 .clickable-icon {
 	user-select: none;
 }
+
+@media (min-width: 1100px) {
+	body {
+		--basori-ui-pad: 6px 10px;
+		--basori-nav-pad: 5px 10px;
+		--basori-list-spacing: 0.3em;
+		--basori-heading-scale: 1.03;
+		--basori-font-ui-scale: 1.02;
+		--basori-line-height: 1.6;
+
+		--header-height: 42px;
+		--input-height: 34px;
+		--nav-item-children-padding-start: 14px;
+		--nav-item-children-margin-start: 14px;
+
+		--callout-title-padding: 11px 16px;
+		--callout-content-padding: 14px 16px;
+	}
+}
+
+@media (min-width: 1400px) {
+	body {
+		--basori-ui-pad: 8px 12px;
+		--basori-nav-pad: 6px 12px;
+		--basori-list-spacing: 0.38em;
+		--basori-heading-scale: 1.06;
+		--basori-font-ui-scale: 1.05;
+		--basori-line-height: 1.65;
+
+		--header-height: 44px;
+		--input-height: 36px;
+		--tab-font-size: calc(var(--font-ui-small) * 1.05);
+
+		--nav-item-children-padding-start: 16px;
+		--nav-item-children-margin-start: 16px;
+
+		--popover-width: 400px;
+		--modal-max-width: 1200px;
+
+		--callout-title-padding: 12px 18px;
+		--callout-content-padding: 16px 18px;
+		--heading-spacing: 1.65em;
+
+		--icon-m: 20px;
+		--icon-l: 20px;
+	}
+
+	.markdown-source-view.mod-cm6 .cm-scroller,
+	.markdown-preview-view {
+		line-height: var(--basori-line-height);
+	}
+
+	.workspace-tab-header {
+		min-height: 38px;
+	}
+}
+
+@media (min-width: 1800px) {
+	body {
+		--basori-ui-pad: 10px 14px;
+		--basori-nav-pad: 8px 14px;
+		--basori-list-spacing: 0.45em;
+		--basori-heading-scale: 1.08;
+		--basori-font-ui-scale: 1.07;
+		--basori-line-height: 1.7;
+
+		--header-height: 46px;
+		--input-height: 38px;
+		--heading-spacing: 1.75em;
+
+		--callout-title-padding: 14px 20px;
+		--callout-content-padding: 18px 20px;
+	}
+}

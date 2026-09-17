@@ -1,0 +1,77 @@
+.workspace-ribbon {
+	width: var(--ribbon-width);
+	padding: var(--ribbon-padding);
+	background-color: var(--ribbon-background);
+	border-right: 1px solid var(--ribbon-border-color, var(--background-modifier-border));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+}
+
+/* Sidebar colaps */
+.workspace-ribbon.is-collapsed,
+.workspace-ribbon.mod-left.is-collapsed {
+	background-color: var(--ribbon-background-collapsed);
+}
+
+/* icon zone */
+.workspace-ribbon .side-dock-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+	width: 100%;
+	padding: 4px 0;
+}
+
+/* icons */
+.workspace-ribbon .clickable-icon {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	color: var(--icon-color);
+	opacity: var(--icon-opacity, 0.85);
+	transition:
+		color 0.15s ease,
+		opacity 0.15s ease,
+		background-color 0.15s ease;
+}
+
+.workspace-ribbon .clickable-icon:hover {
+	color: var(--icon-color-hover);
+	opacity: var(--icon-opacity-hover, 1);
+	background-color: var(--background-modifier-hover);
+}
+
+.workspace-ribbon .clickable-icon.is-active {
+	color: var(--icon-color-active);
+	opacity: 1;
+	background-color: var(--background-modifier-hover);
+	box-shadow: inset 2px 0 0 var(--interactive-accent);
+}
+
+.workspace-ribbon .clickable-icon:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: -2px;
+}
+
+.workspace-ribbon .side-dock-settings {
+	margin-top: auto;
+	padding-top: 8px;
+	border-top: 1px solid var(--ribbon-border-color, var(--background-modifier-border));
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+}
+
+.workspace-ribbon .clickable-icon svg.svg-icon {
+	width: var(--icon-s, 16px);
+	height: var(--icon-s, 16px);
+	stroke-width: var(--icon-s-stroke-width, 2px);
+}

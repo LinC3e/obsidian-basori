@@ -1,4 +1,5 @@
-/* Navigation items (File Explorer, Backlinks, etc.) */
+/* Navigation */
+
 .nav-file-title,
 .nav-folder-title,
 .tree-item-self {
@@ -6,10 +7,16 @@
 	font-size: var(--nav-item-size);
 	font-weight: var(--nav-item-weight);
 	color: var(--nav-item-color);
-	border-radius: 6px;
-	transition: background-color 0.15s ease, color 0.15s ease;
+	border-radius: 6px; /* Basori square */
+	line-height: 1.35;
+	white-space: var(--nav-item-white-space, nowrap);
+	transition:
+		background-color 0.12s ease,
+		color 0.12s ease,
+		box-shadow 0.12s ease;
 }
 
+/* Hover */
 .nav-file-title:hover,
 .nav-folder-title:hover,
 .tree-item-self:hover {
@@ -18,11 +25,50 @@
 	font-weight: var(--nav-item-weight-hover);
 }
 
+/* Active / focused file */
 .nav-file-title.is-active,
 .tree-item-self.is-active {
 	background-color: var(--nav-item-background-active);
 	color: var(--nav-item-color-active);
 	font-weight: var(--nav-item-weight-active);
+	box-shadow: inset 2px 0 0 var(--interactive-accent);
+}
+
+/* Selected (multi-select / highlight) */
+.nav-file-title.is-selected,
+.tree-item-self.is-selected {
+	background-color: var(--nav-item-background-selected, var(--nav-item-background-active));
+	color: var(--nav-item-color-selected, var(--nav-item-color-active));
+}
+
+/* Folders: un poco más de peso visual */
+.nav-folder-title {
+	font-weight: 500;
+	letter-spacing: 0.01em;
+}
+
+.nav-folder-title:hover {
+	font-weight: 500;
+}
+
+/* Collapse chevron */
+.nav-folder-collapse-indicator,
+.tree-item-icon {
+	color: var(--nav-collapse-icon-color, var(--text-faint));
+	opacity: 0.85;
+	transition: color 0.12s ease, opacity 0.12s ease, transform 0.12s ease;
+}
+
+.nav-folder-title:hover .nav-folder-collapse-indicator,
+.tree-item-self:hover .tree-item-icon {
+	color: var(--nav-collapse-icon-color, var(--text-muted));
+	opacity: 1;
+}
+
+.nav-folder.is-collapsed .nav-folder-collapse-indicator,
+.tree-item.is-collapsed .tree-item-icon {
+	color: var(--nav-collapse-icon-color-collapsed, var(--text-faint));
+	opacity: 0.7;
 }
 
 /* Indentation guide */
@@ -31,4 +77,29 @@
 	margin-left: var(--nav-item-children-margin-start);
 	padding-left: var(--nav-item-children-padding-start);
 	border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}
+
+.nav-folder-children .nav-folder-children,
+.tree-item-children .tree-item-children {
+	border-left-color: var(--nav-indentation-guide-color);
+	opacity: 1;
+}
+
+.nav-buttons-container {
+	padding: 4px 6px;
+	gap: 2px;
+}
+
+.nav-action-button {
+	border-radius: 0;
+	transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.nav-action-button:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.nav-action-button.is-active {
+	background-color: var(--background-modifier-hover);
+	box-shadow: inset 0 -2px 0 var(--interactive-accent);
 }

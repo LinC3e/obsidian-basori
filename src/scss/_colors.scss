@@ -3,7 +3,10 @@
 
 	--background-primary: #0F172A;
 	--background-secondary: #10203b;
-	--ribbon-background: #0b2a559f;
+	//--ribbon-background: #0b2a559f;
+	--ribbon-background: #0b2a55;
+	--ribbon-background-collapsed: #0a1f3d;
+	--ribbon-border-color: #334155;
 	/* Titlebar */
 
 	--titlebar-background: #0F172A;
@@ -44,16 +47,11 @@
 	--nav-item-color: #94a3b8;
 	--nav-item-color-hover: #e2e8f0;
 	--nav-item-color-active: #f1f5f9;
-	--nav-item-color-selected: #f1f5f9;
-	--nav-item-color-highlighted: #60a5fa;
-
-	--nav-item-background-hover: #1e3a5f;
-	--nav-item-background-active: #254b7a;
-	--nav-item-background-selected: #1e3a5f;
-
+	--nav-item-background-hover: rgba(51, 65, 85, 0.45);
+	--nav-item-background-active: rgba(59, 130, 246, 0.15);
 	--nav-indentation-guide-color: #334155;
 	--nav-collapse-icon-color: #64748b;
-	--nav-collapse-icon-color-collapsed: #94a3b8;
+	--nav-collapse-icon-color-collapsed: #475569;
 
 	/* Navigation headings */
 	--nav-heading-color: #94a3b8;
@@ -124,12 +122,21 @@
 	--link-external-color: #38bdf8;
 	--link-external-color-hover: #7dd3fc;
 
+	--icon-color: #b3d1fc;
+	--icon-color-hover: #e2e8f0;
+	--icon-color-active: #60a5fa;
+	--icon-color-focused: #93c5fd;
+
 }
 
 .theme-light {
 	--background-primary: #F0F9FF;
 	--background-secondary: #E0F2FE;
+	//--ribbon-background: #9bd7ff;
+
 	--ribbon-background: #9bd7ff;
+	--ribbon-background-collapsed: #bae6fd;
+	--ribbon-border-color: #7dd3fc;
 
 	--titlebar-background-focused: #E0F2FE;
 	--titlebar-border-color: #BAE6FD;
@@ -161,19 +168,14 @@
 	--modal-background: #E0F2FE;
 	--modal-border-color: #BAE6FD;
 
-	--nav-item-color: #334155;
+	--nav-item-color: #475569;
 	--nav-item-color-hover: #0f172a;
 	--nav-item-color-active: #0f172a;
-	--nav-item-color-selected: #0f172a;
-	--nav-item-color-highlighted: #0284c7;
-
-	--nav-item-background-hover: #bae6fd;
-	--nav-item-background-active: #aae4ff;
-	--nav-item-background-selected: #bae6fd;
-
+	--nav-item-background-hover: rgba(186, 230, 253, 0.5);
+	--nav-item-background-active: rgba(2, 132, 199, 0.12);
 	--nav-indentation-guide-color: #bae6fd;
 	--nav-collapse-icon-color: #64748b;
-	--nav-collapse-icon-color-collapsed: #334155;
+	--nav-collapse-icon-color-collapsed: #94a3b8;
 
 	/* Navigation headings */
 	--nav-heading-color: #475569;
@@ -243,6 +245,11 @@
 	--link-unresolved-decoration-color: #94a3b8;
 	--link-external-color: #0ea5e9;
 	--link-external-color-hover: #0284c7;
+
+	--icon-color: #0284c7;
+	--icon-color-hover: #0f172a;
+	--icon-color-active: #0284c7;
+	--icon-color-focused: #0369a1;
 }
 
 // Selection
