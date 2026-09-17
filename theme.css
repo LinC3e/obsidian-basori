@@ -48,16 +48,20 @@
   --nav-heading-color-colapsed-hover: #94a3b8;
   --popover-background: #0b3582;
   --popover-border-color: #183b6c;
-  --tab-background-active: #1e3a5f;
+  --tab-background: transparent;
+  --tab-background-hover: rgba(148, 163, 184, 0.06);
+  --tab-background-active: rgba(96, 165, 250, 0.08);
   --tab-text-color: #94a3b8;
-  --tab-text-color-active: #e2e8f0;
-  --tab-text-color-focused: #94a3b8;
-  --tab-text-color-focused-active: #f1f5f9;
+  --tab-text-color-hover: #cbd5e1;
+  --tab-text-color-active: #f1f5f9;
+  --tab-text-color-focused: #cbd5e1;
+  --tab-text-color-focused-active: #f8fafc;
   --tab-text-color-focused-highlighted: #60a5fa;
   --tab-text-color-focused-active-current: #ffffff;
-  --tab-container-background: #0F172A;
-  --tab-divider-color: #334155;
-  --tab-outline-color: #334155;
+  --tab-container-background: #0f172a;
+  --tab-divider-color: #1e293b;
+  --tab-outline-color: #1e293b;
+  --tab-indicator-color: #60a5fa;
   --background-modifier-form-field: #1e3a5f;
   --background-modifier-border: #334155;
   --background-modifier-border-hover: #475569;
@@ -147,16 +151,20 @@
   --nav-heading-color-colapsed-hover: #475569;
   --popover-background: #E0F2FE;
   --popover-border-color: #7dd3fc;
-  --tab-background-active: #bae6fd;
+  --tab-background: transparent;
+  --tab-background-hover: rgba(15, 23, 42, 0.04);
+  --tab-background-active: rgba(2, 132, 199, 0.07);
   --tab-text-color: #64748b;
+  --tab-text-color-hover: #334155;
   --tab-text-color-active: #0f172a;
   --tab-text-color-focused: #475569;
-  --tab-text-color-focused-active: #3573ca;
+  --tab-text-color-focused-active: #0f172a;
   --tab-text-color-focused-highlighted: #0284c7;
   --tab-text-color-focused-active-current: #0284c7;
-  --tab-container-background: #F0F9FF;
-  --tab-divider-color: #BAE6FD;
-  --tab-outline-color: #BAE6FD;
+  --tab-container-background: #f0f9ff;
+  --tab-divider-color: #bae6fd;
+  --tab-outline-color: #bae6fd;
+  --tab-indicator-color: #0284c7;
   --background-modifier-form-field: #e0f2fe;
   --background-modifier-border: #bae6fd;
   --background-modifier-border-hover: #7dd3fc;
@@ -214,6 +222,9 @@ body {
   --basori-font-ui-scale: 1;
   --basori-list-spacing: 0.25em;
   --basori-heading-scale: 1;
+  --header-height: 40px;
+  --titlebar-border-width: 1px;
+  --titlebar-text-weight: 500;
   --radius-s: 0px;
   --radius-m: 0px;
   --radius-l: 0px;
@@ -270,10 +281,15 @@ body {
   --tab-font-weight: 400;
   --tab-outline-width: 1px;
   --tab-curve: 0px;
-  --tab-radius: 0px;
+  --tab-curve-radius: 6px;
+  --tab-radius: 6px;
   --tab-radius-active: 0px;
-  --tab-width: 180px;
+  --tab-width: 150px;
   --tab-max-width: 320px;
+  --tab-padding-x: 12px;
+  --tab-padding-y: 7px;
+  --tab-indicator-width: 28px;
+  --tab-indicator-height: 2px;
   /* Tab stacks */
   --tab-stacked-font-size: var(--font-ui-smaller);
   --tab-stacked-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
@@ -955,35 +971,219 @@ body.theme-light.basori-sidebar-bg .nav-files-container::before {
 
 /* Tabs */
 .workspace-tab-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: var(--tab-max-width);
+  padding: var(--tab-padding-y) var(--tab-padding-x);
+  border: none;
   border-radius: var(--tab-radius);
+  background-color: var(--tab-background);
+  color: var(--tab-text-color);
   font-size: var(--tab-font-size);
   font-weight: var(--tab-font-weight);
-  color: var(--tab-text-color);
-  max-width: var(--tab-max-width);
   transition: background-color 0.15s ease, color 0.15s ease;
+  /* Remove the default active decoration */
+}
+.workspace-tab-header::before, .workspace-tab-header::after {
+  transition: width 0.2s ease, opacity 0.15s ease;
+}
+
+.workspace-tab-header:hover {
+  background-color: var(--tab-background-hover);
+  color: var(--tab-text-color-hover);
 }
 
 .workspace-tab-header.is-active {
   background-color: var(--tab-background-active);
-  color: var(--tab-text-color-focused-active-current);
+  color: var(--tab-text-color-active);
   border-radius: var(--tab-radius-active);
 }
 
-/* container for tabs */
+/* Small accent indicator */
+.workspace-tab-header.is-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: var(--tab-indicator-width);
+  height: var(--tab-indicator-height);
+  transform: translateX(-50%);
+  background-color: var(--tab-indicator-color);
+  border-radius: 999px;
+  opacity: 1;
+}
+
+.workspace-tab-header-inner-title {
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.workspace-tab-header-inner-icon {
+  color: inherit;
+  opacity: 0.75;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-icon {
+  opacity: 0.9;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--tab-indicator-color);
+  opacity: 1;
+}
+
+.workspace-tab-header-tab-list,
+.workspace-tab-header-inner-close-button {
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+  opacity: 0.65;
+}
+
+.workspace-tab-header-inner-close-button:hover {
+  color: var(--text-normal);
+  background-color: var(--background-modifier-hover);
+}
+
+/* Tab container */
 .workspace-tab-header-container {
   background-color: var(--tab-container-background);
   border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
 }
 
-/* Divider for tabs */
-.workspace-tab-header-inner-title {
-  color: inherit;
+.workspace-tab-header-container-inner {
+  border: none;
 }
 
-/* Stacked tabs */
+.workspace-tab-header + .workspace-tab-header {
+  border-left: 1px solid transparent;
+}
+
 .mod-stacked .workspace-tab-header {
   font-size: var(--tab-stacked-font-size);
   box-shadow: var(--tab-stacked-shadow);
+}
+
+.workspace-tab-header.is-pinned {
+  background-color: transparent;
+}
+
+.workspace-tab-header.is-pinned.is-active {
+  background-color: var(--tab-background-active);
+}
+
+.workspace-tab-header:focus-visible {
+  outline: 1px solid var(--interactive-accent);
+  outline-offset: -1px;
+}
+
+/* Titlebar */
+.titlebar {
+  height: var(--header-height);
+  background-color: var(--titlebar-background);
+  border-bottom: var(--titlebar-border-width, 1px) solid var(--titlebar-border-color);
+  color: var(--titlebar-text-color);
+  font-weight: var(--titlebar-text-weight, 500);
+  letter-spacing: 1em;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.is-focused .titlebar,
+.titlebar:focus-within {
+  background-color: var(--titlebar-background-focused);
+  color: var(--titlebar-text-color-focused);
+}
+
+.titlebar-text,
+.titlebar .titlebar-button {
+  font-size: var(--font-ui-small);
+}
+
+.titlebar-text {
+  font-weight: var(--titlebar-text-weight, 500);
+  opacity: 0.9;
+  letter-spacing: 0.03em;
+}
+
+.is-focused .titlebar-text {
+  opacity: 1;
+}
+
+.titlebar-button {
+  border-radius: 0;
+  opacity: 0.75;
+  transition: opacity 0.12s ease, background-color 0.12s ease, color 0.12s ease;
+}
+
+.titlebar-button:hover {
+  opacity: 1;
+  background-color: var(--background-modifier-hover);
+}
+
+.titlebar-button.mod-close:hover {
+  background-color: var(--background-modifier-error);
+  color: var(--text-on-accent, #fff);
+  opacity: 1;
+}
+
+.view-header {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  background-color: var(--titlebar-background);
+  border-bottom: var(--titlebar-border-width, 1px) solid var(--titlebar-border-color);
+  padding: 0 8px;
+  gap: 4px;
+  transition: background-color 0.15s ease;
+}
+
+/* Panel */
+.workspace-leaf.mod-active .view-header {
+  background-color: var(--titlebar-background-focused);
+  border-bottom-color: var(--titlebar-border-color);
+}
+
+.view-header-title {
+  font-size: var(--font-ui-small);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--titlebar-text-color);
+}
+
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--titlebar-text-color-focused);
+}
+
+/* Icons*/
+.view-header .clickable-icon {
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+  transition: opacity 0.12s ease, background-color 0.12s ease, color 0.12s ease;
+}
+
+.view-header .clickable-icon:hover {
+  opacity: 1;
+  background-color: var(--background-modifier-hover);
+}
+
+.view-header .clickable-icon.is-active {
+  opacity: 1;
+  color: var(--icon-color-active, var(--interactive-accent));
+  box-shadow: inset 0 -2px 0 var(--interactive-accent);
+}
+
+/* Breadcrumbs */
+.view-header-title-container {
+  padding-inline: 4px;
 }
 
 /* Editor */
@@ -1357,22 +1557,3 @@ body.basori-calendar-compact #calendar-container table {
 }
 
 /*# sourceMappingURL=theme.css.map */
-
-/* @settings
-name: Basori
-id: basori
-settings:
-  -
-    id: basori-sidebar-bg
-    title: Sidebar background image
-    description: Show Basori Tiara image in the file explorer
-    type: class-toggle
-    default: false
-  -
-    id: basori-calendar-compact
-    title: Compact calendar
-    description: Smaller Calendar plugin layout
-    type: class-toggle
-    default: false
-
-*/

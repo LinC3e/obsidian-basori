@@ -1,0 +1,109 @@
+/* Titlebar */
+.titlebar {
+	height: var(--header-height);
+	background-color: var(--titlebar-background);
+	border-bottom: var(--titlebar-border-width, 1px) solid var(--titlebar-border-color);
+	color: var(--titlebar-text-color);
+	font-weight: var(--titlebar-text-weight, 500);
+	letter-spacing: 1em;
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.is-focused .titlebar,
+.titlebar:focus-within {
+	background-color: var(--titlebar-background-focused);
+	color: var(--titlebar-text-color-focused);
+}
+
+.titlebar-text,
+.titlebar .titlebar-button {
+	font-size: var(--font-ui-small);
+}
+
+.titlebar-text {
+	font-weight: var(--titlebar-text-weight, 500);
+	opacity: 0.9;
+	letter-spacing: 0.03em;
+}
+
+.is-focused .titlebar-text {
+	opacity: 1;
+}
+
+.titlebar-button {
+	border-radius: 0;
+	opacity: 0.75;
+	transition:
+		opacity 0.12s ease,
+		background-color 0.12s ease,
+		color 0.12s ease;
+}
+
+.titlebar-button:hover {
+	opacity: 1;
+	background-color: var(--background-modifier-hover);
+}
+
+.titlebar-button.mod-close:hover {
+	background-color: var(--background-modifier-error);
+	color: var(--text-on-accent, #fff);
+	opacity: 1;
+}
+
+.view-header {
+	height: var(--header-height);
+	min-height: var(--header-height);
+	background-color: var(--titlebar-background);
+	border-bottom: var(--titlebar-border-width, 1px) solid var(--titlebar-border-color);
+	padding: 0 8px;
+	gap: 4px;
+	transition: background-color 0.15s ease;
+}
+
+/* Panel */
+.workspace-leaf.mod-active .view-header {
+	background-color: var(--titlebar-background-focused);
+	border-bottom-color: var(--titlebar-border-color);
+}
+
+.view-header-title {
+	font-size: var(--font-ui-small);
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: var(--titlebar-text-color);
+}
+
+.workspace-leaf.mod-active .view-header-title {
+	color: var(--titlebar-text-color-focused);
+}
+
+/* Icons*/
+.view-header .clickable-icon {
+	border-radius: 6px;
+	width: 28px;
+	height: 28px;
+	opacity: 0.8;
+	transition:
+		opacity 0.12s ease,
+		background-color 0.12s ease,
+		color 0.12s ease;
+}
+
+.view-header .clickable-icon:hover {
+	opacity: 1;
+	background-color: var(--background-modifier-hover);
+}
+
+.view-header .clickable-icon.is-active {
+	opacity: 1;
+	color: var(--icon-color-active, var(--interactive-accent));
+	box-shadow: inset 0 -2px 0 var(--interactive-accent);
+}
+
+/* Breadcrumbs */
+.view-header-title-container {
+	padding-inline: 4px;
+}

@@ -1,32 +1,159 @@
 /* Tabs */
 .workspace-tab-header {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	max-width: var(--tab-max-width);
+
+	padding: var(--tab-padding-y) var(--tab-padding-x);
+
+	border: none;
 	border-radius: var(--tab-radius);
+
+	background-color: var(--tab-background);
+
+	color: var(--tab-text-color);
+
 	font-size: var(--tab-font-size);
 	font-weight: var(--tab-font-weight);
-	color: var(--tab-text-color);
-	max-width: var(--tab-max-width);
-	transition: background-color 0.15s ease, color 0.15s ease;
+
+	transition:
+		background-color 0.15s ease,
+		color 0.15s ease;
+
+	/* Remove the default active decoration */
+	&::before,
+	&::after {
+		transition:
+			width 0.2s ease,
+			opacity 0.15s ease;
+	}
 }
+
+
+.workspace-tab-header:hover {
+	background-color: var(--tab-background-hover);
+	color: var(--tab-text-color-hover);
+}
+
 
 .workspace-tab-header.is-active {
 	background-color: var(--tab-background-active);
-	color: var(--tab-text-color-focused-active-current);
+	color: var(--tab-text-color-active);
+
 	border-radius: var(--tab-radius-active);
 }
 
-/* container for tabs */
-.workspace-tab-header-container {
-	background-color: var(--tab-container-background);
-	border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+/* Small accent indicator */
+
+.workspace-tab-header.is-active::after {
+	content: "";
+
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+
+	width: var(--tab-indicator-width);
+	height: var(--tab-indicator-height);
+
+	transform: translateX(-50%);
+
+	background-color: var(--tab-indicator-color);
+
+	border-radius: 999px;
+
+	opacity: 1;
 }
 
-/* Divider for tabs */
 .workspace-tab-header-inner-title {
 	color: inherit;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-/* Stacked tabs */
+// icons
+.workspace-tab-header-inner-icon {
+	color: inherit;
+	opacity: 0.75;
+
+	transition:
+		color 0.15s ease,
+		opacity 0.15s ease;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-icon {
+	opacity: 0.9;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+	color: var(--tab-indicator-color);
+	opacity: 1;
+}
+
+
+// close btns
+.workspace-tab-header-tab-list,
+.workspace-tab-header-inner-close-button {
+	color: var(--text-muted);
+
+	opacity: 0;
+	transition:
+		opacity 0.15s ease,
+		color 0.15s ease,
+		background-color 0.15s ease;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+	opacity: 0.65;
+}
+
+.workspace-tab-header-inner-close-button:hover {
+	color: var(--text-normal);
+	background-color: var(--background-modifier-hover);
+}
+
+
+/* Tab container */
+.workspace-tab-header-container {
+	background-color: var(--tab-container-background);
+
+	border-bottom:
+		var(--tab-outline-width)
+		solid
+		var(--tab-outline-color);
+}
+
+.workspace-tab-header-container-inner {
+	border: none;
+}
+
+//Tab divider
+.workspace-tab-header + .workspace-tab-header {
+	border-left: 1px solid transparent;
+}
+
+// Stacked tabs
 .mod-stacked .workspace-tab-header {
 	font-size: var(--tab-stacked-font-size);
 	box-shadow: var(--tab-stacked-shadow);
+}
+
+
+.workspace-tab-header.is-pinned {
+	background-color: transparent;
+}
+
+.workspace-tab-header.is-pinned.is-active {
+	background-color: var(--tab-background-active);
+}
+
+
+.workspace-tab-header:focus-visible {
+	outline: 1px solid var(--interactive-accent);
+	outline-offset: -1px;
 }

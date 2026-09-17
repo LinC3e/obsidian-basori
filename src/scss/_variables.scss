@@ -6,6 +6,10 @@ body {
 	--basori-list-spacing: 0.25em;
 	--basori-heading-scale: 1;
 
+	--header-height: 40px;
+	--titlebar-border-width: 1px;
+	--titlebar-text-weight: 500;
+
 	--radius-s: 0px;
 	--radius-m: 0px;
 	--radius-l: 0px;
@@ -69,14 +73,19 @@ body {
 	--popover-pdf-height: 500px;
 
 	/* tabs */
-	--tab-font-size: var(--font-ui-small);
-	--tab-font-weight: 400;
-	--tab-outline-width: 1px;
-	--tab-curve: 0px;
-	--tab-radius: 0px;
-	--tab-radius-active: 0px;
-	--tab-width: 180px;
+	--tab-font-size: var(--font-ui-small); 
+	--tab-font-weight: 400; 
+	--tab-outline-width: 1px; 
+	--tab-curve: 0px; 
+	--tab-curve-radius: 6px; 
+	--tab-radius: 6px; 
+	--tab-radius-active: 0px; 
+	--tab-width: 150px; 
 	--tab-max-width: 320px;
+	--tab-padding-x: 12px; 
+	--tab-padding-y: 7px;
+	--tab-indicator-width: 28px; 
+	--tab-indicator-height: 2px;
 
 	/* Tab stacks */
 	--tab-stacked-font-size: var(--font-ui-smaller);

@@ -62,17 +62,20 @@
 	--popover-background: #0b3582;
 	--popover-border-color: #183b6c;
 
-	--tab-background-active: #1e3a5f;
-	--tab-text-color: #94a3b8;
-	--tab-text-color-active: #e2e8f0;
-	--tab-text-color-focused: #94a3b8;
-	--tab-text-color-focused-active: #f1f5f9;
+	--tab-background: transparent; 
+	--tab-background-hover: rgba(148, 163, 184, 0.06); 
+	--tab-background-active: rgba(96, 165, 250, 0.08); 
+	--tab-text-color: #94a3b8; 
+	--tab-text-color-hover: #cbd5e1;
+	--tab-text-color-active: #f1f5f9; 
+	--tab-text-color-focused: #cbd5e1; 
+	--tab-text-color-focused-active: #f8fafc; 
 	--tab-text-color-focused-highlighted: #60a5fa;
-	--tab-text-color-focused-active-current: #ffffff;
-
-	--tab-container-background: #0F172A;
-	--tab-divider-color: #334155;
-	--tab-outline-color: #334155;
+	--tab-text-color-focused-active-current: #ffffff; 
+	--tab-container-background: #0f172a; 
+	--tab-divider-color: #1e293b; 
+	--tab-outline-color: #1e293b; 
+	--tab-indicator-color: #60a5fa;
 
 	--background-modifier-form-field: #1e3a5f;
 	--background-modifier-border: #334155;
@@ -186,17 +189,20 @@
 	--popover-background: #E0F2FE;
 	--popover-border-color: #7dd3fc;
 
-	--tab-background-active: #bae6fd;
-	--tab-text-color: #64748b;
-	--tab-text-color-active: #0f172a;
-	--tab-text-color-focused: #475569;
-	--tab-text-color-focused-active: #3573ca;
-	--tab-text-color-focused-highlighted: #0284c7;
-	--tab-text-color-focused-active-current: #0284c7;
-
-	--tab-container-background: #F0F9FF;
-	--tab-divider-color: #BAE6FD;
-	--tab-outline-color: #BAE6FD;
+	--tab-background: transparent; 
+	--tab-background-hover: rgba(15, 23, 42, 0.04); 
+	--tab-background-active: rgba(2, 132, 199, 0.07); 
+	--tab-text-color: #64748b; 
+	--tab-text-color-hover: #334155; 
+	--tab-text-color-active: #0f172a; 
+	--tab-text-color-focused: #475569; 
+	--tab-text-color-focused-active: #0f172a; 
+	--tab-text-color-focused-highlighted: #0284c7; 
+	--tab-text-color-focused-active-current: #0284c7; 
+	--tab-container-background: #f0f9ff; 
+	--tab-divider-color: #bae6fd; 
+	--tab-outline-color: #bae6fd; 
+	--tab-indicator-color: #0284c7; 
 
 	--background-modifier-form-field: #e0f2fe;
 	--background-modifier-border: #bae6fd;
