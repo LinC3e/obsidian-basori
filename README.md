@@ -13,7 +13,7 @@
 <!-- Reemplaza estas rutas con tus capturas reales -->
 | Dark | Light |
 |------|-------|
-| ![Dark mode](assets/preview-dark.png) | ![Light mode](assets/preview-light.png) |
+| ![Dark mode](assets/basori-dark.png) | ![Light mode](assets/basori-light.png) |
 
 ---
 
@@ -44,7 +44,7 @@ Dark mode uses deep slate blues; light mode uses soft sky backgrounds. Both keep
 ---
 
 ## Plugins Support
-
+  - [Styles Settings](https://github.com/community-archive/obsidian-style-settings)
   - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
   - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
 

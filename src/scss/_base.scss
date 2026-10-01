@@ -1,9 +1,3 @@
-// Tabs
-.workspace-tab-header.is-active::before,
-.workspace-tab-header.is-active::after {
-	display: none;
-}
-
 // SVG (bor sqar)
 svg * {
 	stroke-linecap: square;
