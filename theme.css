@@ -230,21 +230,23 @@ body {
   --basori-font-ui-scale: 1;
   --basori-list-spacing: 0.25em;
   --basori-heading-scale: 1;
-  --header-height: 40px;
   --titlebar-border-width: 1px;
   --titlebar-text-weight: 500;
+  --basori-radius-control: 0px;
+  --basori-radius-panel: 0px;
+  --basori-shadow-overlay: 0 8px 24px rgba(15, 23, 42, 0.18);
   --radius-s: 0px;
   --radius-m: 0px;
   --radius-l: 0px;
   --input-radius: 0px;
-  --tab-radius-active: 0px;
-  --toggle-radius: 15px;
-  --toggle-thumb-radius: 15px;
-  --slider-thumb-radius: 15px;
+  --tab-radius-active: var(--basori-radius-control);
+  --toggle-radius: 999px;
+  --toggle-thumb-radius: 999px;
+  --slider-thumb-radius: 999px;
   --font-text-theme: inter, serif;
   --header-height: 40px;
   /* swatch */
-  --swatch-radius: 10px; /* coherente con el resto del tema */
+  --swatch-radius: var(--basori-radius-control);
   --swatch-height: 22px;
   --swatch-width: 50px;
   --swatch-shadow: none;
@@ -263,7 +265,7 @@ body {
   --modal-max-height: 85vh;
   --modal-max-width-narrow: 700px;
   --modal-border-width: 1px;
-  --modal-radius: 6px;
+  --modal-radius: var(--basori-radius-panel);
   --modal-community-sidebar-width: 280px;
   /* navigation */
   --nav-item-size: var(--font-ui-small);
@@ -289,9 +291,9 @@ body {
   --tab-font-weight: 400;
   --tab-outline-width: 1px;
   --tab-curve: 0px;
-  --tab-curve-radius: 6px;
-  --tab-radius: 6px;
-  --tab-radius-active: 0px;
+  --tab-curve-radius: var(--basori-radius-control);
+  --tab-radius: var(--basori-radius-control);
+  --tab-radius-active: var(--basori-radius-control);
   --tab-width: 150px;
   --tab-max-width: 320px;
   --tab-padding-x: 12px;
@@ -300,9 +302,9 @@ body {
   --tab-indicator-height: 2px;
   /* Tab stacks */
   --tab-stacked-font-size: var(--font-ui-smaller);
-  --tab-stacked-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  --tab-stacked-shadow: 2px 0 8px rgba(15, 23, 42, 0.12);
   --input-height: 32px;
-  --input-radius: 15px;
+  --input-radius: var(--basori-radius-control);
   --input-font-weight: 400;
   --input-border-width: 1px;
   --vault-profile-display: flex;
@@ -445,8 +447,6 @@ blockquote blockquote {
   margin-left: 0.5em;
 }
 
-/* Foundation icons */
-/* Icons — clickable UI icons */
 .clickable-icon {
   border-radius: var(--clickable-icon-radius);
   color: var(--icon-color);
@@ -479,11 +479,9 @@ blockquote blockquote {
   stroke-width: var(--icon-stroke);
 }
 
-svg * {
+svg.svg-icon {
   stroke-linecap: square;
   stroke-linejoin: miter;
-  rx: 0;
-  ry: 0;
 }
 
 button,
@@ -561,25 +559,7 @@ button,
     --callout-content-padding: 18px 20px;
   }
 }
-/* Components */
-/* Dropdown */
-select,
-.dropdown {
-  background-color: var(--interactive-normal);
-  background-blend-mode: var(--dropdown-background-blend-mode);
-  background-position: var(--dropdown-background-position);
-  background-size: var(--dropdown-background-size);
-  padding: var(--dropdown-padding);
-  border-radius: 5px;
-  border: 1px solid transparent;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-select:hover,
-.dropdown:hover {
-  background-color: var(--dropdown-background-hover);
-}
-
+/* App */
 /* normal btns */
 button,
 .mod-cta,
@@ -591,7 +571,7 @@ button,
 button:not(.mod-cta):not(.mod-warning):not(.mod-destructive) {
   background-color: var(--interactive-normal);
   color: var(--text-normal);
-  border: 1px solid transparent;
+  border: 1px solid var(--background-modifier-border);
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -600,15 +580,21 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   border-color: var(--background-modifier-border);
 }
 
+button:focus-visible,
+.clickable-icon:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+}
+
 /* Dialog / Modal */
 .modal,
 .modal-container .modal {
   width: var(--dialog-width);
   max-width: var(--dialog-max-width);
   max-height: var(--dialog-max-height);
-  border-radius: 0px; /* square */
+  border-radius: var(--modal-radius);
   border: 1px solid var(--background-modifier-border);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--basori-shadow-overlay);
   font-family: var(--font-text-theme);
 }
 
@@ -636,26 +622,30 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
 .drag-ghost {
   background-color: var(--drag-ghost-background);
   color: var(--drag-ghost-text-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: var(--basori-radius-control);
+  box-shadow: var(--basori-shadow-overlay);
   padding: 6px 12px;
   font-size: var(--font-ui-small);
   opacity: 0.95;
 }
 
-/* Indentation Guides */
-.markdown-source-view .cm-indent::before,
-.markdown-preview-view .list-bullet::before,
-.HyperMD-list-line .cm-indent::before {
-  border-width: var(--indentation-guide-width);
-  border-color: var(--indentation-guide-color);
+/* Dropdown */
+select,
+.dropdown {
+  background-color: var(--interactive-normal);
+  background-blend-mode: var(--dropdown-background-blend-mode);
+  background-position: var(--dropdown-background-position);
+  background-size: var(--dropdown-background-size);
+  padding: var(--dropdown-padding);
+  border-radius: var(--input-radius);
+  border: 1px solid var(--background-modifier-border);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-/* active guides */
-.cm-active .cm-indent::before,
-.HyperMD-list-line.cm-active .cm-indent::before {
-  border-width: var(--indentation-guide-width-active);
-  border-color: var(--indentation-guide-color-active);
+select:hover,
+.dropdown:hover {
+  background-color: var(--dropdown-background-hover);
+  border-color: var(--background-modifier-border-hover);
 }
 
 .menu {
@@ -679,7 +669,7 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   max-height: var(--modal-max-height);
   border: var(--modal-border-width) solid var(--modal-border-color);
   border-radius: var(--modal-radius);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--basori-shadow-overlay);
 }
 
 .modal.mod-narrow {
@@ -700,7 +690,7 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   font-size: var(--nav-item-size);
   font-weight: var(--nav-item-weight);
   color: var(--nav-item-color);
-  border-radius: 6px; /* Basori square */
+  border-radius: var(--basori-radius-control);
   line-height: 1.35;
   white-space: var(--nav-item-white-space, nowrap);
   transition: background-color 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
@@ -731,7 +721,7 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   color: var(--nav-item-color-selected, var(--nav-item-color-active));
 }
 
-/* Folders: un poco más de peso visual */
+/* Folders: un poco mÃ¡s de peso visual */
 .nav-folder-title {
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -764,14 +754,14 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
 /* Indentation guide */
 .nav-folder-children,
 .tree-item-children {
-  margin-left: var(--nav-item-children-margin-start);
+  margin-inline-start: var(--nav-item-children-margin-start);
   padding-left: var(--nav-item-children-padding-start);
-  border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+  border-inline-start: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
 }
 
 .nav-folder-children .nav-folder-children,
 .tree-item-children .tree-item-children {
-  border-left-color: var(--nav-indentation-guide-color);
+  border-inline-start-color: var(--nav-indentation-guide-color);
   opacity: 1;
 }
 
@@ -801,7 +791,8 @@ button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover {
   width: var(--popover-width);
   font-size: var(--popover-font-size);
   background-color: var(--popover-background, var(--background-primary));
-  border-radius: 6px;
+  border: 1px solid var(--popover-border-color, var(--background-modifier-border));
+  border-radius: var(--basori-radius-panel);
   overflow: auto;
 }
 
@@ -874,7 +865,7 @@ progress::-moz-progress-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: var(--clickable-icon-radius);
   color: var(--icon-color);
   opacity: var(--icon-opacity, 0.85);
   transition: color 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;
@@ -1021,7 +1012,7 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
   height: var(--tab-indicator-height);
   transform: translateX(-50%);
   background-color: var(--tab-indicator-color);
-  border-radius: 999px;
+  border-radius: 0;
   opacity: 1;
 }
 
@@ -1103,7 +1094,7 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
   border-bottom: var(--titlebar-border-width, 1px) solid var(--titlebar-border-color);
   color: var(--titlebar-text-color);
   font-weight: var(--titlebar-text-weight, 500);
-  letter-spacing: 1em;
+  letter-spacing: normal;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
@@ -1174,7 +1165,7 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
 
 /* Icons*/
 .view-header .clickable-icon {
-  border-radius: 6px;
+  border-radius: var(--clickable-icon-radius);
   width: 28px;
   height: 28px;
   opacity: 0.8;
@@ -1215,7 +1206,7 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 20;
+  gap: 0.5em;
 }
 
 .callout-title-inner {
@@ -1308,7 +1299,7 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
   --callout-color: var(--callout-quote);
 }
 
-/* [!basori] — mismo sistema de bg que el resto */
+/* [!basori] â€” mismo sistema de bg que el resto */
 .callout[data-callout=basori] {
   --callout-color: var(--callout-basori);
   --callout-icon: lucide-sparkles;
@@ -1390,6 +1381,21 @@ body.theme-light.basori-sidebar-bg .nav-files-container::after {
 /* Color of the # ## ### in the editor */
 .cm-formatting-header {
   color: var(--heading-formatting);
+}
+
+/* Indentation Guides */
+.markdown-source-view .cm-indent::before,
+.markdown-preview-view .list-bullet::before,
+.HyperMD-list-line .cm-indent::before {
+  border-width: var(--indentation-guide-width);
+  border-color: var(--indentation-guide-color);
+}
+
+/* active guides */
+.cm-active .cm-indent::before,
+.HyperMD-list-line.cm-active .cm-indent::before {
+  border-width: var(--indentation-guide-width-active);
+  border-color: var(--indentation-guide-color-active);
 }
 
 /* Links */
@@ -1863,7 +1869,7 @@ body:not(.tasks) li[data-task=D].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
-/* Windows */
+/* Platform */
 /* vailt profile - side footer */
 .workspace-sidedock-vault-profile,
 .vault-profile {
@@ -1934,9 +1940,8 @@ body:not(.tasks) li[data-task=D].task-list-item.is-checked {
   color: var(--icon-color-active, var(--interactive-accent));
 }
 
-/*# sourceMappingURL=theme.css.map */
-
-/* @settings
+/* Preserve the Style Settings metadata in the compiled theme.css. */
+/*! @settings
 name: Basori
 id: basori
 
@@ -1965,5 +1970,6 @@ settings:
     description: Smaller Calendar plugin layout
     type: class-toggle
     default: false
-
 */
+
+/*# sourceMappingURL=theme.css.map */

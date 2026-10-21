@@ -1,11 +1,12 @@
-/* Popover */
+﻿/* Popover */
 .popover,
 .suggestion-container,
 .menu {
 	width: var(--popover-width);
 	font-size: var(--popover-font-size);
 	background-color: var(--popover-background, var(--background-primary));
-	border-radius: 6px;
+	border: 1px solid var(--popover-border-color, var(--background-modifier-border));
+	border-radius: var(--basori-radius-panel);
 	overflow: auto;
 }
 
@@ -15,3 +16,4 @@
 	width: var(--popover-pdf-width);
 	height: var(--popover-pdf-height);
 }
+

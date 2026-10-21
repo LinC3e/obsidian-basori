@@ -1,4 +1,4 @@
-.workspace-ribbon {
+﻿.workspace-ribbon {
 	width: var(--ribbon-width);
 	padding: var(--ribbon-padding);
 	background-color: var(--ribbon-background);
@@ -32,7 +32,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 6px;
+	border-radius: var(--clickable-icon-radius);
 	color: var(--icon-color);
 	opacity: var(--icon-opacity, 0.85);
 	transition:

@@ -1,4 +1,4 @@
-.callout {
+﻿.callout {
 	border-width: var(--callout-border-width);
 	border-radius: var(--callout-radius);
 	padding: var(--callout-padding);
@@ -15,7 +15,7 @@
 	text-transform: uppercase;
 	display: flex;
 	align-items: center;
-	gap: 20;
+	gap: 0.5em;
 }
 
 .callout-title-inner {
@@ -109,7 +109,7 @@
 	--callout-color: var(--callout-quote);
 }
 
-/* [!basori] — mismo sistema de bg que el resto */
+/* [!basori] â€” mismo sistema de bg que el resto */
 .callout[data-callout="basori"] {
 	--callout-color: var(--callout-basori);
 	--callout-icon: lucide-sparkles;
@@ -120,3 +120,5 @@
 	--callout-color: var(--callout-tiara);
 	--callout-icon: lucide-crown;
 }
+
+

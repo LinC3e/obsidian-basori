@@ -1,32 +1,35 @@
-@use 'colors';
+﻿@use 'colors';
 @use 'variables';
 @use 'base';
 
-/* Components */
-@use 'components/_dropdown';
-@use 'components/buttons';
-@use 'components/dialog';
-@use 'components/dragging';
-@use 'components/indentation-guides';
-@use 'components/menu';
-@use 'components/modal';
-@use 'components/navigation';
-@use 'components/popover';
-@use 'components/progress-bar';
-@use 'components/ribbon';
-@use 'components/sidebar-bg';
-@use 'components/swatch';
-@use 'components/tabs';
-@use 'components/titlebar';
+/* App */
+@use 'app/buttons';
+@use 'app/dialog';
+@use 'app/dragging';
+@use 'app/dropdown';
+@use 'app/menu';
+@use 'app/modal';
+@use 'app/navigation';
+@use 'app/popover';
+@use 'app/progress-bar';
+@use 'app/ribbon';
+@use 'app/sidebar-bg';
+@use 'app/swatch';
+@use 'app/tabs';
+@use 'app/titlebar';
 
 /* Editor */
-@use 'editor/_callouts';
+@use 'editor/callouts';
 @use 'editor/headings';
+@use 'editor/indentation-guides';
 @use 'editor/links';
 
 /* Features */
-@use 'features/_calendar';
+@use 'features/calendar';
 @use 'features/checkboxes';
 
-/* Windows */
-@use 'windows/vault-profile';
+/* Platform */
+@use 'platform/vault-profile';
+
+/* Preserve the Style Settings metadata in the compiled theme.css. */
+@use 'settings';

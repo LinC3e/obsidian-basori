@@ -1,0 +1,30 @@
+/*! @settings
+name: Basori
+id: basori
+
+settings:
+  -
+    id: basori-sidebar-bg
+    title: Sidebar background image
+    description: Show Basori Tiara image in the file explorer
+    type: class-toggle
+    default: false
+
+  -
+    id: basori-sidebar-bg-opacity
+    title: Sidebar image opacity
+    description: Adjust the opacity of the Basori Tiara image
+    type: variable-number-slider
+    default: 0.45
+    min: 0
+    max: 1
+    step: 0.05
+    format: "0.00"
+
+  -
+    id: basori-calendar-compact
+    title: Compact calendar
+    description: Smaller Calendar plugin layout
+    type: class-toggle
+    default: false
+*/

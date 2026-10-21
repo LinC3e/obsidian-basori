@@ -1,4 +1,4 @@
-/* Navigation */
+﻿/* Navigation */
 
 .nav-file-title,
 .nav-folder-title,
@@ -7,7 +7,7 @@
 	font-size: var(--nav-item-size);
 	font-weight: var(--nav-item-weight);
 	color: var(--nav-item-color);
-	border-radius: 6px; /* Basori square */
+	border-radius: var(--basori-radius-control);
 	line-height: 1.35;
 	white-space: var(--nav-item-white-space, nowrap);
 	transition:
@@ -41,7 +41,7 @@
 	color: var(--nav-item-color-selected, var(--nav-item-color-active));
 }
 
-/* Folders: un poco más de peso visual */
+/* Folders: un poco mÃ¡s de peso visual */
 .nav-folder-title {
 	font-weight: 500;
 	letter-spacing: 0.01em;
@@ -74,14 +74,14 @@
 /* Indentation guide */
 .nav-folder-children,
 .tree-item-children {
-	margin-left: var(--nav-item-children-margin-start);
+	margin-inline-start: var(--nav-item-children-margin-start);
 	padding-left: var(--nav-item-children-padding-start);
-	border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+	border-inline-start: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
 }
 
 .nav-folder-children .nav-folder-children,
 .tree-item-children .tree-item-children {
-	border-left-color: var(--nav-indentation-guide-color);
+	border-inline-start-color: var(--nav-indentation-guide-color);
 	opacity: 1;
 }
 

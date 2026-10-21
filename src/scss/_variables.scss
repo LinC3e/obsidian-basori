@@ -1,4 +1,4 @@
-body {
+﻿body {
 	--basori-ui-pad: 4px 8px;
 	--basori-nav-pad: 4px 8px;
 	--basori-tab-pad: 0;
@@ -6,24 +6,26 @@ body {
 	--basori-list-spacing: 0.25em;
 	--basori-heading-scale: 1;
 
-	--header-height: 40px;
 	--titlebar-border-width: 1px;
 	--titlebar-text-weight: 500;
+	--basori-radius-control: 0px;
+	--basori-radius-panel: 0px;
+	--basori-shadow-overlay: 0 8px 24px rgba(15, 23, 42, 0.18);
 
 	--radius-s: 0px;
 	--radius-m: 0px;
 	--radius-l: 0px;
 	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--toggle-radius: 15px;
-	--toggle-thumb-radius: 15px;
-	--slider-thumb-radius: 15px;
+	--tab-radius-active: var(--basori-radius-control);
+	--toggle-radius: 999px;
+	--toggle-thumb-radius: 999px;
+	--slider-thumb-radius: 999px;
 
 	--font-text-theme: inter, serif;
 	--header-height: 40px;
 
 	/* swatch */
-	--swatch-radius: 10px;           /* coherente con el resto del tema */
+	--swatch-radius: var(--basori-radius-control);
 	--swatch-height: 22px;
 	--swatch-width: 50px;
 	--swatch-shadow: none;
@@ -45,7 +47,7 @@ body {
 	--modal-max-height: 85vh;
 	--modal-max-width-narrow: 700px;
 	--modal-border-width: 1px;
-	--modal-radius: 6px;
+	--modal-radius: var(--basori-radius-panel);
 	--modal-community-sidebar-width: 280px;
 
 	/* navigation */
@@ -77,9 +79,9 @@ body {
 	--tab-font-weight: 400; 
 	--tab-outline-width: 1px; 
 	--tab-curve: 0px; 
-	--tab-curve-radius: 6px; 
-	--tab-radius: 6px; 
-	--tab-radius-active: 0px; 
+	--tab-curve-radius: var(--basori-radius-control);
+	--tab-radius: var(--basori-radius-control);
+	--tab-radius-active: var(--basori-radius-control);
 	--tab-width: 150px; 
 	--tab-max-width: 320px;
 	--tab-padding-x: 12px; 
@@ -89,10 +91,10 @@ body {
 
 	/* Tab stacks */
 	--tab-stacked-font-size: var(--font-ui-smaller);
-	--tab-stacked-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+	--tab-stacked-shadow: 2px 0 8px rgba(15, 23, 42, 0.12);
 
 	--input-height: 32px;
-	--input-radius: 15px;
+	--input-radius: var(--basori-radius-control);
 	--input-font-weight: 400;
 	--input-border-width: 1px;
 
@@ -253,8 +255,6 @@ blockquote blockquote {
 	margin-left: 0.5em;
 }
 
-/* Foundation icons */
-/* Icons — clickable UI icons */
 
 .clickable-icon {
 	border-radius: var(--clickable-icon-radius);
@@ -287,3 +287,6 @@ blockquote blockquote {
 	height: var(--icon-size);
 	stroke-width: var(--icon-stroke);
 }
+
+
+

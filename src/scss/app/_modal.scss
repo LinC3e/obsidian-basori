@@ -1,4 +1,4 @@
-/* Modal */
+﻿/* Modal */
 .modal {
 	background-color: var(--modal-background);
 	width: var(--modal-width);
@@ -7,7 +7,7 @@
 	max-height: var(--modal-max-height);
 	border: var(--modal-border-width) solid var(--modal-border-color);
 	border-radius: var(--modal-radius);
-	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+	box-shadow: var(--basori-shadow-overlay);
 }
 
 .modal.mod-narrow {
