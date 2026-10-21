@@ -21,7 +21,9 @@
 	--toggle-thumb-radius: 999px;
 	--slider-thumb-radius: 999px;
 
-	--font-text-theme: inter, serif;
+	--font-text-theme: Inter, Arial, sans-serif;
+	--font-ui-theme: Inter, Arial, sans-serif;
+	--font-interface-theme: var(--font-ui-theme);
 	--header-height: 40px;
 
 	/* swatch */

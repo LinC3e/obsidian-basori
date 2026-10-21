@@ -243,7 +243,9 @@ body {
   --toggle-radius: 999px;
   --toggle-thumb-radius: 999px;
   --slider-thumb-radius: 999px;
-  --font-text-theme: inter, serif;
+  --font-text-theme: Inter, Arial, sans-serif;
+  --font-ui-theme: Inter, Arial, sans-serif;
+  --font-interface-theme: var(--font-ui-theme);
   --header-height: 40px;
   /* swatch */
   --swatch-radius: var(--basori-radius-control);
@@ -1448,103 +1450,154 @@ a,
 
    ========================================================= */
 body.basori-calendar-compact #calendar-container {
-  font-size: 0.78em;
-  line-height: 1.2;
-  padding: 4px 6px 8px;
-  letter-spacing: 0.01em;
+  --basori-calendar-cell-size: 2.25rem;
+  --basori-calendar-cell-gap: 3px;
+  --basori-calendar-accent-soft: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+  --basori-calendar-accent-hover: color-mix(in srgb, var(--interactive-accent) 20%, transparent);
+  padding: 10px;
+  font-size: var(--font-ui-small);
 }
 
-/* Header */
+/* Month title and navigation */
+body.basori-calendar-compact #calendar-container .nav,
+body.basori-calendar-compact #calendar-container .calendar-nav {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-inline-start: 3px solid var(--interactive-accent);
+  background-color: var(--background-secondary);
+}
+
 body.basori-calendar-compact #calendar-container .month,
 body.basori-calendar-compact #calendar-container .year {
-  font-size: 0.8em;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  color: var(--text-normal);
+  font-size: var(--font-ui-small);
+  font-weight: 700;
+  letter-spacing: 0.015em;
 }
 
 body.basori-calendar-compact #calendar-container .arrow,
 body.basori-calendar-compact #calendar-container .reset-button {
-  padding: 2px 4px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
   border-radius: 0;
-  opacity: 0.85;
+  background-color: var(--background-primary);
+  color: var(--text-muted);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* days of the week (S M T ...) */
+body.basori-calendar-compact #calendar-container .arrow:hover,
+body.basori-calendar-compact #calendar-container .reset-button:hover {
+  border-color: var(--interactive-accent);
+  background-color: var(--background-modifier-hover);
+  color: var(--interactive-accent);
+}
+
+/* Seven-column date grid */
+body.basori-calendar-compact #calendar-container table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: var(--basori-calendar-cell-gap);
+}
+
 body.basori-calendar-compact #calendar-container th {
-  padding: 2px 0;
-  font-size: 0.7em;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  padding: 5px 0 7px;
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
   text-transform: uppercase;
-  opacity: 0.8;
 }
 
 body.basori-calendar-compact #calendar-container .day,
 body.basori-calendar-compact #calendar-container .week-num {
-  padding: 2px 1px 4px;
-  min-height: 1.85em;
+  box-sizing: border-box;
+  min-height: var(--basori-calendar-cell-size);
+  padding: 5px 2px;
+  border: 1px solid transparent;
   border-radius: 0;
-  vertical-align: top;
+  text-align: center;
+  vertical-align: middle;
 }
 
 body.basori-calendar-compact #calendar-container .day {
+  position: relative;
   font-variant-numeric: tabular-nums;
   font-weight: 500;
-}
-
-body.basori-calendar-compact #calendar-container .today,
-body.basori-calendar-compact #calendar-container .active {
-  font-weight: 700;
-}
-
-body.basori-calendar-compact #calendar-container .today {
-  box-shadow: inset 0 0 0 1px var(--background-modifier-border);
-}
-
-body.basori-calendar-compact #calendar-container .active {
-  box-shadow: inset 0 0 0 1.5px var(--interactive-accent);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 body.basori-calendar-compact #calendar-container .day:hover,
 body.basori-calendar-compact #calendar-container .week-num:hover {
-  box-shadow: inset 0 0 0 1px var(--background-modifier-border);
+  border-color: var(--background-modifier-border-hover);
+  background-color: var(--background-secondary);
 }
 
+body.basori-calendar-compact #calendar-container .today {
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+  font-weight: 700;
+}
+
+body.basori-calendar-compact #calendar-container .active {
+  border-color: var(--interactive-accent);
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent, white);
+  font-weight: 700;
+}
+
+body.basori-calendar-compact #calendar-container .active.today {
+  box-shadow: inset 0 0 0 1px var(--background-primary);
+}
+
+body.basori-calendar-compact #calendar-container .week-num {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small square event marks sit below the date number. */
 body.basori-calendar-compact #calendar-container .dot-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1px;
-  margin-top: 1px;
-  min-height: 4px;
+  min-height: 5px;
   max-height: 5px;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 3px;
 }
 
 body.basori-calendar-compact #calendar-container .dot,
 body.basori-calendar-compact #calendar-container .task {
-  width: 3px;
-  height: 3px;
-  border-radius: 0;
+  width: 4px;
+  height: 4px;
   margin: 0;
-  flex-shrink: 0;
+  border-radius: 0;
+  flex: 0 0 auto;
 }
 
-/* Week numbers */
-body.basori-calendar-compact #calendar-container .week-num {
-  font-size: 0.7em;
-  font-weight: 500;
-  opacity: 0.85;
-  padding-top: 3px;
+body.basori-calendar-compact #calendar-container .day:focus-visible,
+body.basori-calendar-compact #calendar-container .arrow:focus-visible,
+body.basori-calendar-compact #calendar-container .reset-button:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 1px;
 }
 
-body.basori-calendar-compact #calendar-container table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  border-spacing: 0;
+@media (max-width: 400px) {
+  body.basori-calendar-compact #calendar-container {
+    --basori-calendar-cell-size: 1.9rem;
+    --basori-calendar-cell-gap: 1px;
+    padding: 5px;
+  }
 }
-
 /* ------------------- */
 /* Checkbox styling & icons. Credit Minimal theme: https://minimal.guide/Block+types/Checklists#Checkbox+styling */
 /* Support @kepano - https://www.buymeacoffee.com/kepano */
@@ -1947,6 +2000,58 @@ id: basori
 
 settings:
   -
+    id: font-text-theme
+    title: Note font
+    description: Choose the font used for note content
+    type: variable-select
+    default: "Inter, Arial, sans-serif"
+    options:
+      -
+        label: Inter
+        value: "Inter, Arial, sans-serif"
+      -
+        label: Arial
+        value: "Arial, sans-serif"
+      -
+        label: Helvetica
+        value: "Helvetica, Arial, sans-serif"
+      -
+        label: Georgia
+        value: "Georgia, serif"
+      -
+        label: Times New Roman
+        value: "'Times New Roman', serif"
+      -
+        label: Courier New
+        value: "'Courier New', monospace"
+
+  -
+    id: font-interface-theme
+    title: Interface font
+    description: Choose the font used for Obsidian interface elements
+    type: variable-select
+    default: "Inter, Arial, sans-serif"
+    options:
+      -
+        label: Inter
+        value: "Inter, Arial, sans-serif"
+      -
+        label: Arial
+        value: "Arial, sans-serif"
+      -
+        label: Helvetica
+        value: "Helvetica, Arial, sans-serif"
+      -
+        label: Georgia
+        value: "Georgia, serif"
+      -
+        label: Times New Roman
+        value: "'Times New Roman', serif"
+      -
+        label: Courier New
+        value: "'Courier New', monospace"
+
+  -
     id: basori-sidebar-bg
     title: Sidebar background image
     description: Show Basori Tiara image in the file explorer
@@ -1966,8 +2071,8 @@ settings:
 
   -
     id: basori-calendar-compact
-    title: Compact calendar
-    description: Smaller Calendar plugin layout
+    title: Calendar agenda style
+    description: Use square date tiles and a highlighted month header in the Calendar plugin
     type: class-toggle
     default: false
 */

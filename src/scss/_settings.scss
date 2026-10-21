@@ -4,6 +4,58 @@ id: basori
 
 settings:
   -
+    id: font-text-theme
+    title: Note font
+    description: Choose the font used for note content
+    type: variable-select
+    default: "Inter, Arial, sans-serif"
+    options:
+      -
+        label: Inter
+        value: "Inter, Arial, sans-serif"
+      -
+        label: Arial
+        value: "Arial, sans-serif"
+      -
+        label: Helvetica
+        value: "Helvetica, Arial, sans-serif"
+      -
+        label: Georgia
+        value: "Georgia, serif"
+      -
+        label: Times New Roman
+        value: "'Times New Roman', serif"
+      -
+        label: Courier New
+        value: "'Courier New', monospace"
+
+  -
+    id: font-interface-theme
+    title: Interface font
+    description: Choose the font used for Obsidian interface elements
+    type: variable-select
+    default: "Inter, Arial, sans-serif"
+    options:
+      -
+        label: Inter
+        value: "Inter, Arial, sans-serif"
+      -
+        label: Arial
+        value: "Arial, sans-serif"
+      -
+        label: Helvetica
+        value: "Helvetica, Arial, sans-serif"
+      -
+        label: Georgia
+        value: "Georgia, serif"
+      -
+        label: Times New Roman
+        value: "'Times New Roman', serif"
+      -
+        label: Courier New
+        value: "'Courier New', monospace"
+
+  -
     id: basori-sidebar-bg
     title: Sidebar background image
     description: Show Basori Tiara image in the file explorer
@@ -23,8 +75,8 @@ settings:
 
   -
     id: basori-calendar-compact
-    title: Compact calendar
-    description: Smaller Calendar plugin layout
+    title: Calendar agenda style
+    description: Use square date tiles and a highlighted month header in the Calendar plugin
     type: class-toggle
     default: false
 */
