@@ -13,7 +13,11 @@
 <!-- Reemplaza estas rutas con tus capturas reales -->
 | Dark | Light |
 |------|-------|
-| ![Dark mode](assets/basori-dark.png) | ![Light mode](assets/basori-light.png) |
+| ![Dark mode](assets/basori-dark.png) | ![Light mode](assets/basori-ligth.png) |
+
+Navigation Tree Preview with All Styles Settings actives (opacity 0-100)
+
+![Navigation-Tree](assets/navigation-tree-preview.png)
 
 ---
 
