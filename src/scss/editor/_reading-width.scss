@@ -1,0 +1,16 @@
+body {
+	--file-line-width: min(calc(100% - 2rem), 2400px);
+}
+
+.markdown-preview-view .markdown-preview-sizer,
+.markdown-source-view.mod-cm6 .cm-sizer {
+	width: 100%;
+	max-width: var(--file-line-width);
+	margin-inline: auto;
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+	width: 100%;
+	max-width: 100%;
+	margin-inline: auto;
+}

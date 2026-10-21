@@ -32,6 +32,10 @@ Dark mode uses deep slate blues; light mode uses soft sky backgrounds. Both keep
 ## Features
 
 - Full **dark** and **light** support
+- **Style Settings** controls for note and interface fonts
+- Optional **Calendar agenda style** with a highlighted month header, square date tiles, and distinct today/selected states
+- Optional **Lucide-style file explorer icons** for notes and folders, including open and closed folder states
+- Folder icons can use varied Basori palette colors or one selected accent color
 - Styled components:
   - Tabs & tab stacks
   - Buttons, inputs, dropdowns, checkboxes
@@ -44,9 +48,21 @@ Dark mode uses deep slate blues; light mode uses soft sky backgrounds. Both keep
 ---
 
 ## Plugins Support
-  - [Styles Settings](https://github.com/community-archive/obsidian-style-settings)
-  - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
-  - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
+
+- [Style Settings](https://github.com/community-archive/obsidian-style-settings) — choose fonts, enable the Calendar layout, and configure file explorer icons and folder colors.
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) — optional agenda-style layout.
+- [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
+
+### Style Settings
+
+Install and enable the Style Settings community plugin, then open **Settings → Style Settings → Basori**.
+
+- **Note font** and **Interface font** let you choose between Inter, Arial, Helvetica, Georgia, Times New Roman, and Courier New. The selected font must be available on your system; otherwise the listed fallback font is used.
+- **Calendar agenda style** enables the alternate layout for the Calendar plugin.
+- **Folder and note icons** adds Lucide-style icons to the file explorer.
+- **Folder icon colors** chooses varied colors or one color for folder icons. Varied colors repeat in a stable sequence; in single-color mode, choose an accent under **Folder color**.
+
+Enable **Folder and note icons** to show folder colors. Folder colors affect icons only; folder names retain the normal explorer text color.
 
 ### Checklist
 ![checkbox](assets/checkbox-styles.png)
