@@ -1,0 +1,78 @@
+/* Lucide-style file explorer icons, controlled by Style Settings. */
+body.basori-file-icons {
+	--basori-icon-folder: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z'/%3E%3C/svg%3E");
+	--basori-icon-folder-open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 14 1.5-2.5A2 2 0 0 1 9.2 10.5H21a2 2 0 0 1 1.9 2.6l-1.7 6a2 2 0 0 1-1.9 1.4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E");
+	--basori-icon-note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z'/%3E%3Cpath d='M14 2v6h6M8 13h8M8 17h8'/%3E%3C/svg%3E");
+}
+
+body.basori-file-icons .nav-folder-title-content::before,
+body.basori-file-icons .nav-file-title-content::before {
+	width: 1em;
+	height: 1em;
+	margin-inline-end: 0.45em;
+	background-color: currentColor;
+	content: "";
+	display: inline-block;
+	flex: 0 0 auto;
+	vertical-align: -0.15em;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+}
+
+body.basori-file-icons .nav-folder-title-content::before {
+	-webkit-mask-image: var(--basori-icon-folder);
+	mask-image: var(--basori-icon-folder);
+}
+
+body.basori-file-icons .nav-folder.is-collapsed .nav-folder-title-content::before {
+	-webkit-mask-image: var(--basori-icon-folder);
+	mask-image: var(--basori-icon-folder);
+}
+
+body.basori-file-icons .nav-folder:not(.is-collapsed) > .nav-folder-title .nav-folder-title-content::before {
+	-webkit-mask-image: var(--basori-icon-folder-open);
+	mask-image: var(--basori-icon-folder-open);
+}
+
+body.basori-file-icons .nav-file-title-content::before {
+	-webkit-mask-image: var(--basori-icon-note);
+	mask-image: var(--basori-icon-note);
+}
+
+body.basori-file-icons .nav-file-title.is-active .nav-file-title-content::before,
+body.basori-file-icons .nav-folder-title.is-active .nav-folder-title-content::before {
+	background-color: currentColor;
+}
+
+/* Folder colors follow the existing light/dark semantic palette. */
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n + 1) .nav-folder-title-content::before {
+	background-color: var(--callout-info);
+}
+
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n + 2) .nav-folder-title-content::before {
+	background-color: var(--callout-success);
+}
+
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n + 3) .nav-folder-title-content::before {
+	background-color: var(--callout-example);
+}
+
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n + 4) .nav-folder-title-content::before {
+	background-color: var(--callout-warning);
+}
+
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n + 5) .nav-folder-title-content::before {
+	background-color: var(--callout-basori);
+}
+
+body.basori-file-icons.basori-folder-random .nav-folder:nth-child(6n) .nav-folder-title-content::before {
+	background-color: var(--callout-fail);
+}
+
+body.basori-file-icons.basori-folder-single .nav-folder-title-content::before {
+	background-color: var(--basori-folder-color, var(--interactive-accent));
+}

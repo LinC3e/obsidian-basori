@@ -63,15 +63,15 @@ settings:
     default: false
 
   -
-    id: basori-sidebar-bg-opacity
+    id: basori-sidebar-bg-opacity-percent
     title: Sidebar image opacity
     description: Adjust the opacity of the Basori Tiara image
     type: variable-number-slider
-    default: 0.45
+    default: 45
     min: 0
-    max: 1
-    step: 0.05
-    format: "0.00"
+    max: 100
+    step: 5
+    format: "%"
 
   -
     id: basori-calendar-compact
@@ -79,4 +79,52 @@ settings:
     description: Use square date tiles and a highlighted month header in the Calendar plugin
     type: class-toggle
     default: false
+
+  -
+    id: basori-file-icons
+    title: Folder and note icons
+    description: Show Lucide icons in the file explorer
+    type: class-toggle
+    default: false
+
+  -
+    id: basori-folder-color-mode
+    title: Folder icon colors
+    description: Choose varied folder colors or one custom color
+    type: class-select
+    allowEmpty: false
+    default: basori-folder-random
+    options:
+      -
+        label: Varied colors
+        value: basori-folder-random
+      -
+        label: One color
+        value: basori-folder-single
+
+  -
+    id: basori-folder-color
+    title: Folder color
+    description: Color used when One color mode is selected
+    type: variable-select
+    default: var(--interactive-accent)
+    options:
+      -
+        label: Basori blue
+        value: var(--interactive-accent)
+      -
+        label: Cyan
+        value: var(--callout-info)
+      -
+        label: Green
+        value: var(--callout-success)
+      -
+        label: Purple
+        value: var(--callout-example)
+      -
+        label: Pink
+        value: var(--callout-basori)
+      -
+        label: Orange
+        value: var(--callout-fail)
 */
